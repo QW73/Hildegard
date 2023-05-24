@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:keyboard="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_screen"
+        android:gravity="center|top"
+        android:theme="@style/HildegardAuthorization"
+        android:orientation="vertical"
+        android:paddingTop="44dp"
+
+        android:paddingBottom="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/app_icon_code"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="@string/go_back"
+            app:srcCompat="@drawable/ic_app"
+            android:transitionName="@string/image_logo_transition"/>
+
+        <TextView
+            android:id="@+id/app_name_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-4dp"
+            android:layout_marginBottom="26dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:transitionName="@string/image_logo_transition"/>
+
+        <FrameLayout
+            android:id="@+id/login_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            />
+
+    <com.davidmiguel.numberkeyboard.NumberKeyboard
+        android:id="@+id/numberKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp"
+        app:numberkeyboard_numberKeyBackground="?attr/colorSecondary"
+        keyboard:numberkeyboard_keyHeight="76dp"
+        keyboard:numberkeyboard_keyWidth="76dp"
+        keyboard:numberkeyboard_keyboardType="integer"
+        keyboard:numberkeyboard_numberKeyTextColor="?attr/colorPrimary"
+        keyboard:numberkeyboard_rightAuxBtnIcon="@drawable/numberkeyboard_ic_backspace" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+

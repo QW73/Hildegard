@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.qw73.hildegard.screens.main.profile.parameters.ParametersViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="44dp"
+        android:scrollbars="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linear_personal_data_"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            tools:context=".home.profile.parameters.ParametersFragment">
+
+            <!-- Пол -->
+            <LinearLayout
+                android:id="@+id/container_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_gender"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="@string/string_male"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="@string/string_female"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Возраст -->
+            <LinearLayout
+                android:id="@+id/container_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_age"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/et_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="25"
+                    android:inputType="number"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!-- Вес -->
+            <LinearLayout
+                android:id="@+id/container_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_weight"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/et_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="70"
+                    android:inputType="numberDecimal"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!-- Рост -->
+            <LinearLayout
+                android:id="@+id/container_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_height"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/et_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="170"
+                    android:inputType="number"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!-- Уровень физической активности -->
+            <LinearLayout
+                android:id="@+id/container_activity_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_activity_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_activity_level"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_activity_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio_activity_level_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="@string/activity_level_1"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_activity_level2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="@string/activity_level_2"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_activity_level3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="@string/activity_level_3"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_activity_level4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="@string/activity_level_4"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <!-- Цели -->
+            <LinearLayout
+                android:id="@+id/container_goals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_goals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_goals"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_goals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio_goals1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="Поддержание веса"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_goals2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="Похудение"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_goals3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="Набор массы"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</layout>

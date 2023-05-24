@@ -1,0 +1,70 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="HildegardSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/brown</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/dark_brown</item>
+        <item name="colorPrimaryContainer">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondaryContainer">@color/warm_white</item>
+        <item name="colorOnSurface">@color/green</item>
+        <item name="colorAccent">@color/orange</item>
+        <item name="fontFamily">@font/ssp_semibold_family</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+
+    </style>
+
+    <style name="HildegardAuthorization" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/brown</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/dark_brown</item>
+        <item name="colorPrimaryContainer">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondaryContainer">@color/warm_white</item>
+        <item name="colorOnSurface">@color/green</item>
+        <item name="colorAccent">@color/orange</item>
+        <item name="fontFamily">@font/ssp_semibold_family</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/transition_logo
+        </item>
+
+        <item name="android:windowSharedElementExitTransition">
+            @transition/transition_logo
+        </item>
+    </style>
+
+        <!-- Base application theme. -->
+        <style name="HildegardMain" parent="Theme.AppCompat.Light.DarkActionBar">
+            <!-- Customize your theme here. -->
+            <item name="colorPrimary">@color/brown</item>
+            <item name="colorOnPrimary">@color/white</item>
+            <item name="colorPrimaryDark">@color/dark_brown</item>
+            <item name="colorPrimaryContainer">@color/white</item>
+
+            <item name="colorSecondary">@color/white</item>
+            <item name="colorOnSecondary">@color/black</item>
+            <item name="colorOnSecondaryContainer">@color/warm_white</item>
+
+            <item name="colorOnSurface">@color/green</item>
+            <item name="colorAccent">@color/orange</item>
+            <item name="fontFamily">@font/ssp_semibold_family</item>
+
+        </style>
+
+    <style name="CustomDatePickerDialog" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Дополнительные настройки стиля -->
+        <item name="android:colorAccent">@color/green</item>
+        <item name="android:calendarTextColor">@color/brown</item>
+        <item name="android:textColorPrimary">@color/dark_brown</item>
+        <item name="colorControlActivated">@color/green</item>
+    </style>
+
+</resources>

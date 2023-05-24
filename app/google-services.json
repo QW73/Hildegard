@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "906141585606",
+    "project_id": "hildegard-e9ce2",
+    "storage_bucket": "hildegard-e9ce2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906141585606:android:2f2a8b39ddd59bd52a07c7",
+        "android_client_info": {
+          "package_name": "com.qw73.hildegard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906141585606-1tscvk2fcibtof2lf286svkutt2dr87k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUcpdiUXmvWLuq6-gUWNuVipR5yH0u98I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906141585606-1tscvk2fcibtof2lf286svkutt2dr87k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

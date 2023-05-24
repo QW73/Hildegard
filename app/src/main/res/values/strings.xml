@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Hildegard</string>
+    <string name="menu_home">Главная</string>
+    <string name="menu_chat">Чат</string>
+    <string name="menu_cart">Заказы</string>
+    <string name="menu_profile">Профиль</string>
+    <string name="go_back">Go Back</string>
+    <string name="label_fill_phone_number">Введите номер телефона</string>
+    <string name="phone_number_hint">+7 (000) 000-00-00</string>
+    <string name="registration">Подтвердить номер</string>
+    <string name="invalid_number">Введен некорректный номер</string>
+    <string name="label_fill_code">Введите проверочный код</string>
+    <string name="phone_code_hint">0 0 0 0</string>
+    <string name="change_number">Изменить номер</string>
+    <string name="resend"> Отправить еще раз?</string>
+    <string name="invalid_otp">Неверный код.</string>
+    <string name="otp_sent">OTP sent to %s</string>
+    <string name="otp_not_sent">Unable to send OTP on %s</string>
+
+    <!-- transitions transitions -->
+    <string name="image_logo_transition">transition_logo</string>
+    <string name="image_banner_transition">bannerImageTransition</string>
+    <string name="view_title_transition">titleTransition</string>
+    <string name="developer">Developed by QW73</string>
+    <string name="string_personal_data">Личные данные</string>
+    <string name="string_menu_settings">Настройки меню</string>
+    <string name="string_contact">Наши контакты</string>
+    <string name="string_faq">Частые вопросы</string>
+    <string name="string_chat">Онлайн-чат</string>
+    <string name="string_parameters">Мои параметры</string>
+    <string name="string_family_sharing">Семейный тариф</string>
+    <string name="string_promo">Акции и скидки</string>
+
+
+    <string name="string_bday">День рождения:</string>
+    <string name="string_email">Email:</string>
+    <string name="string_data_phone_number">Номер телефона:</string>
+    <string name="string_name">Имя:</string>
+
+    <string name="invalid_email_error">Введен некорректный почтовый адрес!</string>
+
+    <string name="good_morning">Доброе утро</string>
+    <string name="good_afternoon">Добрый день</string>
+    <string name="good_evening">Добрый вечер</string>
+    <string name="good_night">Доброй ночи</string>
+    <string name="greetings">%s!</string>
+    <string name="greetings_with_name">%1$s, %2$s!</string>
+
+
+    <string name="string_gender">Пол:</string>
+    <string name="string_age">Возраст:</string>
+    <string name="string_weight">Вес в кг:</string>
+    <string name="string_height">Рост в см:</string>
+    <string name="string_activity_level">Уровень физической активности:</string>
+    <string name="string_goals">Цели:</string>
+
+    <string name="string_male">Мужской</string>
+    <string name="string_female">Женский</string>
+    <string name="activity_level_1">Сидячий образ жизни</string>
+    <string name="activity_level_2">Легкая активность</string>
+    <string name="activity_level_3">Умеренная активность</string>
+    <string name="activity_level_4">Высокая активность</string>
+
+</resources>

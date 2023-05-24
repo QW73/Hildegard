@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.qw73.hildegard.screens.main.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".screens.main.profile.ProfileFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_personal_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:id="@+id/icon_personal_data"
+                android:layout_width="29dp"
+                android:layout_height="28dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_personal_data" />
+
+            <TextView
+                android:id="@+id/title_personal_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:text="@string/string_personal_data"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_parameters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:id="@+id/icon_parameters"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="9.5dp"
+                android:src="@drawable/ic_parameters" />
+
+            <TextView
+                android:id="@+id/title_parameters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:text="@string/string_parameters"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_menu_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp">
+
+            <ImageView
+                android:id="@+id/icon_menu_settings"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="9.5dp"
+                android:src="@drawable/ic_menu_settings" />
+
+            <TextView
+                android:id="@+id/title_menu_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:text="@string/string_menu_settings"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="20dp"
+            android:background="@color/green" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_promo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="2dp">
+
+            <ImageView
+                android:id="@+id/icon_promo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="9.5dp"
+                android:src="@drawable/ic_promo" />
+
+            <TextView
+                android:id="@+id/title_promo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="7dp"
+                android:text="@string/string_promo"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_family_sharing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp"
+            android:paddingStart="17dp"
+            android:paddingEnd="18dp">
+
+            <ImageView
+                android:id="@+id/icon_family_sharing"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="9.5dp"
+                android:src="@drawable/ic_pedestrian_family_svgrepo_com" />
+
+            <TextView
+                android:id="@+id/title_family_sharing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="7dp"
+                android:text="@string/string_family_sharing"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="20dp"
+            android:background="@color/green" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_faq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="18dp">
+
+            <ImageView
+                android:id="@+id/icon_faq"
+                android:layout_width="22dp"
+                android:layout_height="23dp"
+                android:layout_margin="9dp"
+                android:src="@drawable/ic_faq" />
+
+            <TextView
+                android:id="@+id/title_faq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="7dp"
+                android:text="@string/string_faq"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="18dp">
+
+            <ImageView
+                android:id="@+id/icon_chat"
+                android:layout_width="24dp"
+                android:layout_height="25dp"
+                android:layout_margin="9.5dp"
+                android:src="@drawable/ic_chat" />
+
+            <TextView
+                android:id="@+id/title_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="6dp"
+                android:text="@string/string_chat"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp"
+            android:paddingStart="19dp"
+            android:paddingEnd="18dp">
+
+            <ImageView
+                android:id="@+id/icon_contact"
+                android:layout_width="27dp"
+                android:layout_height="25dp"
+                android:layout_margin="9dp"
+                android:src="@drawable/ic_contact" />
+
+            <TextView
+                android:id="@+id/title_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/string_contact"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.qw73.hildegard.screens.authorization.verifyOTP.VarifyOtpViewModel" />
+
+    </data>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/linear_verify_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            tools:context=".authorization.verify.VerifyFragment">
+
+            <TextView
+                android:id="@+id/label_fill_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/label_fill_code"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
+
+            <com.qw73.hildegard.screens.authorization.otpView.OtpView
+                android:id="@+id/otp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSurface"
+                android:textIsSelectable="false"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:textSize="32dp"
+                app:cursorColor="?attr/colorAccent"
+                app:lineColor="@color/light_green"
+                app:viewType="line"
+                app:itemCount="6"/>
+
+            <TextView
+                android:id="@+id/container_change_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:clickable="true"
+                android:onClick="@{() -> viewModel.onChangeNumberClick()}"
+                android:text="@string/change_number"
+                android:textAlignment="center"
+                android:textColor="?attr/colorAccent"
+                android:textSize="20sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="@{viewModel.loaderVisibility? View.VISIBLE : View.GONE}" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:paddingTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/view_error_otp"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/invalid_otp"
+                    android:visibility="@{viewModel.isError? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/view_resent_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="@{viewModel.isResendClickable}"
+                    android:onClick="@{() -> viewModel.onResendClick()}"
+                    android:text="@{viewModel.resendText}"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="16sp"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

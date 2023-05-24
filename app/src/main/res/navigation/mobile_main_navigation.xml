@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.qw73.hildegard.screens.main.home.HomeFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="com.qw73.hildegard.cart.CartFragment"
+        android:label="Заказы"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+    <!-- Навигация "Профиль" -->
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.qw73.hildegard.screens.main.profile.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/home_fragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_personal_data_Fragment"
+            app:destination="@id/personal_data_fragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_parameters_Fragment"
+            app:destination="@id/parameters_fragment" />
+    </fragment>
+
+    <!-- Навигация "Личные данные" -->
+    <fragment
+        android:id="@+id/personal_data_fragment"
+        android:name="com.qw73.hildegard.screens.main.profile.personalData.PersonalDataFragment"
+        android:label="Личные данные"
+        tools:layout="@layout/fragment_personal_data">
+        <action
+            android:id="@+id/action_personal_data_Fragment_to_profileFragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+
+    <!-- Навигация "Мои параметры" -->
+    <fragment
+        android:id="@+id/parameters_fragment"
+        android:name="com.qw73.hildegard.screens.main.profile.parameters.ParametersFragment"
+        android:label="Мои параметры"
+        tools:layout="@layout/fragment_parameters">
+        <action
+            android:id="@+id/action_parameters_Fragment_to_profileFragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brown">#917C70</color>
+    <color name="white">#ffffff</color>
+    <color name="dark_brown">#766153</color>
+    <color name="darker_brown">#D7504238</color>
+    <color name="black">#000000</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="warm_white">#FFF6F4</color>
+    <color name="orange">#fa8334</color>
+    <color name="green">#717744</color>
+    <color name="light_green">#bcbd8b</color>
+    <color name="greenish_white">#CECFB1</color>
+    <color name="colorBadge">#152BF4</color>
+</resources>

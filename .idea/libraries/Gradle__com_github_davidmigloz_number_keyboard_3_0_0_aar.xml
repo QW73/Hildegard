@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.davidmigloz:number-keyboard:3.0.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/dc1340f71b2cd03fdf70e96f254d7681/transformed/number-keyboard-3.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/dc1340f71b2cd03fdf70e96f254d7681/transformed/number-keyboard-3.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/dc1340f71b2cd03fdf70e96f254d7681/transformed/number-keyboard-3.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/modules-2/files-2.1/com.github.davidmigloz/number-keyboard/3.0.0/cdb5cb4fc554a8d23c062c4c00188f394ce7999a/number-keyboard-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
