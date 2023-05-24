@@ -153,13 +153,11 @@ class PersonalDataFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 sharedViewModel.saveBirthday(s.toString())
-<<<<<<< HEAD
                 if(sharedViewModel.getOneMore() == true)
                 {
                     sharedViewModel.saveIsDataFull(true)
                 }
-=======
->>>>>>> ff299308376b45f1e517a6f2b195fcbc6ad49e0b
+
             }
 
             override fun afterTextChanged(s: Editable?) {}

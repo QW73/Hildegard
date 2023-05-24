@@ -27,11 +27,6 @@ class ParametersViewModel @Inject constructor(
         return 12345678
     }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ff299308376b45f1e517a6f2b195fcbc6ad49e0b
     fun calculateAge(birthday: Date): Int {
         val calendar = Calendar.getInstance()
 
@@ -39,10 +34,6 @@ class ParametersViewModel @Inject constructor(
         val currentYear = calendar.get(Calendar.YEAR)
         val currentMonth = calendar.get(Calendar.MONTH)
         val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
-<<<<<<< HEAD
-=======
-
->>>>>>> ff299308376b45f1e517a6f2b195fcbc6ad49e0b
         calendar.time = birthday
         val birthYear = calendar.get(Calendar.YEAR)
         val birthMonth = calendar.get(Calendar.MONTH)

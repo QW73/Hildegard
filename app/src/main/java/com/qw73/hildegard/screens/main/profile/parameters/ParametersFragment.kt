@@ -41,11 +41,6 @@ class ParametersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         restoreValues()
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> ff299308376b45f1e517a6f2b195fcbc6ad49e0b
     }
 
     private fun setupObservers() {
@@ -157,7 +152,7 @@ class ParametersFragment : Fragment() {
         })
 
 // Обработчик изменений для переключателей
-        viewBinding.radioGroupGender.setOnCheckedChangeListener { group, checkedId ->
+        viewBinding.radioGroupGender.setOnCheckedChangeListener { _, checkedId ->
             val gender = when (checkedId) {
                 R.id.radio_male -> "Male"
                 R.id.radio_female -> "Female"
@@ -167,7 +162,7 @@ class ParametersFragment : Fragment() {
             checkDataFullness()
         }
 
-        viewBinding.radioGroupActivityLevel.setOnCheckedChangeListener { group, checkedId ->
+        viewBinding.radioGroupActivityLevel.setOnCheckedChangeListener { _, checkedId ->
             val activity = when (checkedId) {
                 R.id.radio_activity_level_1 -> "level1"
                 R.id.radio_activity_level2 -> "level2"
@@ -179,7 +174,7 @@ class ParametersFragment : Fragment() {
             checkDataFullness()
         }
 
-        viewBinding.radioGroupGoals.setOnCheckedChangeListener { group, checkedId ->
+        viewBinding.radioGroupGoals.setOnCheckedChangeListener { _, checkedId ->
             val goals = when (checkedId) {
                 R.id.radio_goals1 -> "goals1"
                 R.id.radio_goals2  -> "goals2"
@@ -202,14 +197,10 @@ class ParametersFragment : Fragment() {
         val isDataFull = !age.isNullOrBlank() && !height.isNullOrBlank() && !weight.isNullOrBlank()
                 && !gender.isNullOrBlank() && !activity.isNullOrBlank() && !goals.isNullOrBlank()
 
-<<<<<<< HEAD
         val oneMore = !height.isNullOrBlank() && !weight.isNullOrBlank()
                 && !gender.isNullOrBlank() && !activity.isNullOrBlank() && !goals.isNullOrBlank()
 
         sharedViewModel.saveOneMore(oneMore)
-
-=======
->>>>>>> ff299308376b45f1e517a6f2b195fcbc6ad49e0b
         viewModel.setIsDataFull(isDataFull)
         sharedViewModel.saveIsDataFull(isDataFull)
     }
