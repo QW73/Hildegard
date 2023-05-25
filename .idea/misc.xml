@@ -32,8 +32,10 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_menu_settings.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_note_document_page_paper_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_orders.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_page_blank_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_pedestrian_family_svgrepo_com.xml" value="0.11" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_black.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_svgrepo_com__1_.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_svgrepo_com__2_.xml" value="0.11" />
@@ -44,6 +46,10 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_setting_line_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_settings_simple_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_shopping_cart.xml" value="0.1" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_tick_box_svgrepo_com.xml" value="0.197" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_tick_checkbox_svgrepo_com.xml" value="0.197" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_tick_circle_svgrepo_com.xml" value="0.197" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_tick_circle_svgrepo_com__1_.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_vector_back_black.xml" value="0.2315" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_weight_scales_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_weight_svgrepo_com.xml" value="0.11" />
@@ -72,7 +78,7 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activities/activity_main.xml" value="0.18885869565217392" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_authorization.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_home.xml" value="0.24818840579710144" />
-        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_otp.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_sign_up_code.xml" value="0.2" />
@@ -81,11 +87,12 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_cart.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_chat.xml" value="0.1578125" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_home.xml" value="0.1578125" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_menu_settings.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_otp_send.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_otp_verify.xml" value="0.2" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_parameters.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_personal_data.xml" value="0.1" />
-        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_profile.xml" value="0.37339055793991416" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_sign_up_code.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_sign_up_main.xml" value="0.18885869565217392" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_gender_spinner.xml" value="0.1" />

@@ -2,8 +2,9 @@
     <string name="app_name">Hildegard</string>
     <string name="menu_home">Главная</string>
     <string name="menu_chat">Чат</string>
-    <string name="menu_cart">Заказы</string>
+    <string name="menu_cart">Корзина</string>
     <string name="menu_profile">Профиль</string>
+
     <string name="go_back">Go Back</string>
     <string name="label_fill_phone_number">Введите номер телефона</string>
     <string name="phone_number_hint">+7 (000) 000-00-00</string>
@@ -22,15 +23,15 @@
     <string name="image_banner_transition">bannerImageTransition</string>
     <string name="view_title_transition">titleTransition</string>
     <string name="developer">Developed by QW73</string>
+
     <string name="string_personal_data">Личные данные</string>
     <string name="string_menu_settings">Настройки меню</string>
     <string name="string_contact">Наши контакты</string>
     <string name="string_faq">Частые вопросы</string>
     <string name="string_chat">Онлайн-чат</string>
     <string name="string_parameters">Мои параметры</string>
-    <string name="string_family_sharing">Семейный тариф</string>
     <string name="string_promo">Акции и скидки</string>
-
+    <string name="string_orders">Мои заказы</string>
 
     <string name="string_bday">День рождения:</string>
     <string name="string_email">Email:</string>
@@ -60,5 +61,6 @@
     <string name="activity_level_2">Легкая активность</string>
     <string name="activity_level_3">Умеренная активность</string>
     <string name="activity_level_4">Высокая активность</string>
+
 
 </resources>

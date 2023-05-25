@@ -6,6 +6,8 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.qw73.hildegard.R
+import com.qw73.hildegard.data.OPEN_MENU_SETTING
+import com.qw73.hildegard.data.OPEN_ORDERS
 import com.qw73.hildegard.data.OPEN_PARAMETERS
 import com.qw73.hildegard.data.OPEN_PERSONAL_DATA
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,6 +26,8 @@ class ProfileViewModel @Inject constructor(
         profileEvents.value = when (layout.id) {
             R.id.container_personal_data -> OPEN_PERSONAL_DATA
             R.id.container_parameters -> OPEN_PARAMETERS
+            R.id.container_orders -> OPEN_ORDERS
+            R.id.container_menu_settings -> OPEN_MENU_SETTING
             // Добавьте другие условия для определения значений для других лейаутов
             else -> throw IllegalArgumentException("Unknown layout clicked")
         }

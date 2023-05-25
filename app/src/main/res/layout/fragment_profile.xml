@@ -119,6 +119,39 @@
             android:background="@color/green" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container_orders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_middle_item_container"
+            android:gravity="left|center"
+            android:orientation="horizontal"
+            android:paddingVertical="2dp"
+            android:paddingStart="17dp"
+            android:paddingEnd="18dp">
+
+            <ImageView
+                android:id="@+id/icon_orders"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
+                android:layout_margin="9.5dp"
+                android:src="@drawable/ic_orders" />
+
+            <TextView
+                android:id="@+id/title_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="7dp"
+                android:text="@string/string_orders"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="216dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/container_promo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,39 +174,6 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="7dp"
                 android:text="@string/string_promo"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="20sp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <View
-            android:layout_width="216dp"
-            android:layout_height="2dp"
-            android:layout_marginVertical="8dp" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/container_family_sharing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/profile_middle_item_container"
-            android:gravity="left|center"
-            android:orientation="horizontal"
-            android:paddingVertical="2dp"
-            android:paddingStart="17dp"
-            android:paddingEnd="18dp">
-
-            <ImageView
-                android:id="@+id/icon_family_sharing"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_margin="9.5dp"
-                android:src="@drawable/ic_pedestrian_family_svgrepo_com" />
-
-            <TextView
-                android:id="@+id/title_family_sharing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="7dp"
-                android:text="@string/string_family_sharing"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="20sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>

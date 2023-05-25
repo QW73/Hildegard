@@ -28,7 +28,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     private var savedOneMore: Boolean? = null
 
     fun saveOneMore(oneMore: Boolean) {
-        savedOneMore= oneMore
+        savedOneMore = oneMore
     }
 
     fun getOneMore(): Boolean? {
@@ -36,8 +36,8 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     fun saveIsDataFull(isDataFull: Boolean) {
-        savedIsDataFull= isDataFull
-        Log.d("datafull",isDataFull.toString())
+        savedIsDataFull = isDataFull
+        Log.d("datafull", isDataFull.toString())
     }
 
     fun getIsDataFull(): Boolean? {
@@ -45,7 +45,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     fun saveWeight(weight: String) {
-        savedWeight= weight
+        savedWeight = weight
     }
 
     fun getSavedWeight(): String? {
@@ -53,7 +53,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     fun saveAge(age: String) {
-        savedAge= age
+        savedAge = age
     }
 
     fun getSavedAge(): String? {
@@ -61,7 +61,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     fun saveHeight(height: String) {
-        savedHeight= height
+        savedHeight = height
     }
 
     fun getSavedHeight(): String? {
@@ -69,7 +69,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     fun saveGoals(goals: String) {
-        savedGoals= goals
+        savedGoals = goals
     }
 
     fun getSavedGoals(): String? {
@@ -77,7 +77,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     fun saveActivity(activity: String) {
-        savedActivity= activity
+        savedActivity = activity
     }
 
     fun getSavedActivity(): String? {
@@ -92,7 +92,7 @@ class SharedViewModel @Inject constructor() : ViewModel() {
         return savedGender
     }
 
-        fun saveName(name: String) {
+    fun saveName(name: String) {
         savedName = name
     }
 
@@ -121,4 +121,77 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     }
 
     // добавить когда дата полная то и вычисление тутже
+    fun calculateDiet() {
+        if (savedIsDataFull == true) {
+
+            var calories = 0 // калории
+            var protein = 0 // белки
+            var carbohydrates = 0 // углеводы
+            var fat = 0 //жиры
+
+            var activity =
+                when (savedActivity) {
+                    "level1" -> 1.2
+                    "level2" -> 1.375
+                    "level3" -> 1.55
+                    "level4" -> 1.725
+                    else -> {
+                        0.00
+                    }
+                }
+
+
+            if (savedGoals == "goals1") {
+                calories = dailyCalories(activity)
+                protein = dailyProtein(activity, 1)
+                carbohydrates= (calories * 0.5 / 4).toInt()
+                fat = (calories * 0.25 / 9).toInt()
+            }
+            else if (savedGoals == "goals2") {
+                calories = ((dailyCalories(activity) * 0.85).toInt())
+                protein = dailyProtein(activity, 2)
+                carbohydrates= (calories * 0.45 / 4).toInt()
+                fat = (calories * 0.25 / 9).toInt()
+            }
+            else if (savedGoals == "goals3") {
+                calories = ((dailyCalories(activity) * 1.15).toInt())
+                protein = dailyProtein(activity, 3)
+                carbohydrates= (calories * 0.55 / 4).toInt()
+                fat = (calories * 0.25 / 9).toInt()
+            }
+
+
+            Log.d("dailyC", calories.toString())
+            Log.d("dailyP", protein.toString())
+            Log.d("dailyCar", carbohydrates.toString())
+            Log.d("dailyF", fat.toString())
+
+        }
+    }
+
+
+    private fun dailyCalories(level: Double): Int {
+        val calories = if (savedGender == "Male") {
+            ((66 + 13.75* savedWeight!!.toInt() + 5 * savedHeight!!.toInt() - 6.75 * savedAge!!.toInt()) * level).toInt()
+        } else {
+            ((655 + 9.56 * savedWeight!!.toInt() + 1.85 * savedHeight!!.toInt() - 4.68 * savedAge!!.toInt()) * level).toInt()
+        }
+        return calories
+    }
+
+    private fun dailyProtein(level: Double, goal: Int): Int {
+        val protein: Int = when (goal) {
+            1 -> {
+                (savedWeight!!.toInt() * 0.8).toInt()
+            }
+            2 -> {
+                (savedWeight!!.toInt() * 1.2).toInt()
+            }
+            3 -> (savedWeight!!.toInt() * 1)
+            else -> {
+                0
+            }
+        }
+        return protein
+    }
 }

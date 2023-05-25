@@ -15,7 +15,6 @@ class ProfileFragment : Fragment() {
 
     lateinit var viewBinding: FragmentProfileBinding
 
-
     /* view mode object */
     private val viewModel: ProfileViewModel by activityViewModels()
 
@@ -37,6 +36,14 @@ class ProfileFragment : Fragment() {
         }
 
         viewBinding.containerParameters.setOnClickListener {
+            viewModel.profileItemClick(it as LinearLayoutCompat)
+        }
+
+        viewBinding.containerOrders.setOnClickListener {
+            viewModel.profileItemClick(it as LinearLayoutCompat)
+        }
+
+        viewBinding.containerMenuSettings.setOnClickListener {
             viewModel.profileItemClick(it as LinearLayoutCompat)
         }
     }

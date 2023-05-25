@@ -31,11 +31,39 @@
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/home_fragment" />
         <action
+            android:id="@+id/action_profileFragment_to_ordersFragment"
+            app:destination="@id/orders_fragment" />
+        <action
             android:id="@+id/action_profileFragment_to_personal_data_Fragment"
             app:destination="@id/personal_data_fragment" />
         <action
             android:id="@+id/action_profileFragment_to_parameters_Fragment"
             app:destination="@id/parameters_fragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_menu_settings_Fragment"
+            app:destination="@id/menu_settings_fragment" />
+    </fragment>
+
+    <!-- Навигация "Настройки меню" -->
+    <fragment
+        android:id="@+id/menu_settings_fragment"
+        android:name="com.qw73.hildegard.menu_settings.MenuSettingsFragment"
+        android:label="Настройки меню"
+        tools:layout="@layout/fragment_menu_settings">
+        <action
+            android:id="@+id/action_menu_settings_Fragment_to_profileFragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+
+    <!-- Навигация "Мои заказы" -->
+    <fragment
+        android:id="@+id/orders_fragment"
+        android:name="com.qw73.hildegard.orders.OrdersFragment"
+        android:label="Мои заказы"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_orders_Fragment_to_profileFragment"
+            app:destination="@id/profile_fragment" />
     </fragment>
 
     <!-- Навигация "Личные данные" -->

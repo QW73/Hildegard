@@ -19,3 +19,5 @@ const val EVENT_VALIDATE_FAILED = 14
 
 const val OPEN_PERSONAL_DATA = 15
 const val OPEN_PARAMETERS = 16
+const val OPEN_MENU_SETTING = 17
+const val OPEN_ORDERS = 18

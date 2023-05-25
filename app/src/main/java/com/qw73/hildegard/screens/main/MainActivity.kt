@@ -9,6 +9,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.viewbinding.ViewBinding
 import com.qw73.hildegard.R
 import com.qw73.hildegard.base.BaseActivity
+import com.qw73.hildegard.data.OPEN_MENU_SETTING
+import com.qw73.hildegard.data.OPEN_ORDERS
 import com.qw73.hildegard.data.OPEN_PARAMETERS
 import com.qw73.hildegard.data.OPEN_PERSONAL_DATA
 import com.qw73.hildegard.data.impl.prefs.IPref
@@ -73,6 +75,14 @@ class MainActivity : BaseActivity() {
 
             OPEN_PARAMETERS -> {
                 navController.navigate(R.id.action_profileFragment_to_parameters_Fragment)
+            }
+
+            OPEN_MENU_SETTING -> {
+                navController.navigate(R.id.action_profileFragment_to_menu_settings_Fragment)
+            }
+
+            OPEN_ORDERS -> {
+               navController.navigate(R.id.action_profileFragment_to_ordersFragment)
             }
             // Добавьте другие случаи для открытия других фрагментов
         }

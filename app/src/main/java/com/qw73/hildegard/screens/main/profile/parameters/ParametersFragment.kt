@@ -3,7 +3,6 @@ package com.qw73.hildegard.screens.main.profile.parameters
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,7 +52,7 @@ class ParametersFragment : Fragment() {
 
         val savedBirthday = sharedViewModel.getSavedBirthday()
 
-        if (savedBirthday != null) {
+        if (savedBirthday != null && savedBirthday.isNotEmpty())  {
 
             val dateFormat = SimpleDateFormat("dd.MM.yyyy")
             val birthday = dateFormat.parse(savedBirthday)
@@ -199,10 +198,12 @@ class ParametersFragment : Fragment() {
 
         val oneMore = !height.isNullOrBlank() && !weight.isNullOrBlank()
                 && !gender.isNullOrBlank() && !activity.isNullOrBlank() && !goals.isNullOrBlank()
+                && sharedViewModel.getSavedAge().isNullOrBlank()
 
         sharedViewModel.saveOneMore(oneMore)
         viewModel.setIsDataFull(isDataFull)
         sharedViewModel.saveIsDataFull(isDataFull)
+        sharedViewModel.calculateDiet()
     }
 
     companion object Companion {

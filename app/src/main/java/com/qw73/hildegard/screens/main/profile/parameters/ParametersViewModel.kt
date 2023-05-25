@@ -23,10 +23,6 @@ class ParametersViewModel @Inject constructor(
         _isDataFull.value = isDataFull
     }
 
-    fun calculateDiet(): Int {
-        return 12345678
-    }
-
     fun calculateAge(birthday: Date): Int {
         val calendar = Calendar.getInstance()
 

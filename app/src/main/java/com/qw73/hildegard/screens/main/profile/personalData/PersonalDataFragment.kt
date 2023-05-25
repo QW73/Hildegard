@@ -14,9 +14,8 @@ import androidx.fragment.app.activityViewModels
 import com.qw73.hildegard.R
 import com.qw73.hildegard.databinding.FragmentPersonalDataBinding
 import com.qw73.hildegard.screens.main.SharedViewModel
-import com.qw73.hildegard.screens.main.profile.parameters.ParametersFragment
-import com.qw73.hildegard.screens.main.profile.parameters.ParametersViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
 import java.util.*
 
 @AndroidEntryPoint
@@ -156,6 +155,18 @@ class PersonalDataFragment : Fragment() {
                 if(sharedViewModel.getOneMore() == true)
                 {
                     sharedViewModel.saveIsDataFull(true)
+                    sharedViewModel.saveOneMore(false)
+
+                    val dateFormat = SimpleDateFormat("dd.MM.yyyy")
+                    val savedBirthday = sharedViewModel.getSavedBirthday()
+                    if (savedBirthday != null) {
+                        if (savedBirthday.isNotEmpty()) {
+                            val birthday = dateFormat.parse(savedBirthday)
+                            val age = viewModel.calculateAge(birthday)
+                            sharedViewModel.saveAge(age.toString())
+                        }
+                    }
+                    sharedViewModel.calculateDiet()
                 }
 
             }
