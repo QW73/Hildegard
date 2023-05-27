@@ -32,12 +32,14 @@
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/395306807378e0b20c12cd00b82c9b13/transformed/fragment-ktx-1.2.4-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/eb2631660053ab6a7358f92085635bbb/transformed/activity-ktx-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/2de7dfd1182ec53d4d441272ab664de6/transformed/lifecycle-viewmodel-ktx-2.5.1-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/25f8cf16b056212fc770e8a89db68a8b/transformed/room-ktx-2.4.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/aed63310c5d626abc15225958fad3051/transformed/lifecycle-runtime-ktx-2.2.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/860b906b7f37cebd4d90dbcdafff4fa2/transformed/hilt-android-2.42-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/071f728a2474aa7a3e35f7437a3a55ac/transformed/navigation-ui-2.3.3-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/0558554e27a2eb0d26d352cb4ec10d00/transformed/material-1.8.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/5662f9b2f41215654282948853376bb4/transformed/appcompat-1.5.1-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/08773898ec1a33a88a777b2c3b5bdb4a/transformed/play-services-auth-20.1.0-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/7277c3aaac3be8e04d63247b9cdf0cb5/transformed/glide-4.12.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/896afe688384ea886aad3b57db1d72ee/transformed/viewpager2-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/49cac36337da7d3199e6bd956bd761b8/transformed/navigation-fragment-2.3.3-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/b305afdc1f2eb0ea5b2be9181f7789a1/transformed/play-services-auth-api-phone-18.0.1-api.jar</arg>
@@ -106,6 +108,12 @@
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/0375191aab8e4e00f4f7503f7d5c5f31/transformed/lifecycle-livedata-core-ktx-2.5.1-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/b3fb40eea5d7356e5fe0ba32917b9ab1/transformed/lifecycle-livedata-core-2.5.1-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common/2.5.1/1fdb7349701e9cf2f0a69fc10642b6fef6bb3e12/lifecycle-common-2.5.1.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/de4fe36141326a94c347da11c8952191/transformed/room-runtime-2.4.0-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/androidx.room/room-common/2.4.0/63d9f9cb245ee9b4c8ebb8aca201661f99583ffa/room-common-2.4.0.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/aaeb0000af4cff6e25016537980b12ac/transformed/sqlite-framework-2.2.0-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/aa5aa39d8c3bc42712ee8a0b3185cd95/transformed/sqlite-2.2.0-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/b279428b731fc38f832080d9358e5738/transformed/gifdecoder-4.12.0-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/40c52bed4aeef3e3519c0023cc5e8154/transformed/exifinterface-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/androidx.concurrent/concurrent-futures/1.1.0/50b7fb98350d5f42a4e49704b03278542293ba48/concurrent-futures-1.1.0.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/dddb0e6acfee657634f2e28a31f7a14a/transformed/versionedparcelable-1.1.1-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/androidx.collection/collection-ktx/1.1.0/f807b2f366f7b75142a67d2f3c10031065b5168/collection-ktx-1.1.0.jar</arg>
@@ -140,6 +148,8 @@
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/a1ebce4a1a7a1d77a7b72ad5b864b643/transformed/MaskedEditText-4.0.7-api.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/com.googlecode.libphonenumber/libphonenumber/8.2.0/19058c10b227de7757ddcccfd759ef6778439728/libphonenumber-8.2.0.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/transforms-3/e4f5de111e9bb4e81c7ca8ecc5d2a091/transformed/dagger-lint-aar-2.42-api.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/com.github.bumptech.glide/disklrucache/4.12.0/6d44c9103551e3ff51f00ac26077c143a8fb74f9/disklrucache-4.12.0.jar</arg>
+                <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.12.0/298d793db124809d74ad9a90de5eddc408898c84/annotations-4.12.0.jar</arg>
                 <arg>$USER_HOME$/AndroidStudioProjects/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.9.0/74fe3b8b4f3fc84dc940d0ca4c4b270dbc902764/error_prone_annotations-2.9.0.jar</arg>
                 <arg>$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-32/android.jar</arg>
                 <arg>$USER_HOME$/AppData/Local/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar</arg>
@@ -240,6 +250,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.errorprone:error_prone_annotations:2.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.googlecode.libphonenumber:libphonenumber:8.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-common:2.4.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:disklrucache:4.12.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:annotations:4.12.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.ext:junit:1.1.5@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:core:1.5.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.6.1@aar" level="project" />
@@ -339,6 +352,13 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.play:integrity:1.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.recaptcha:recaptcha:18.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-interop:20.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-runtime:2.4.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.sqlite:sqlite-framework:2.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.sqlite:sqlite:2.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-ktx:2.4.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:glide:4.12.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:gifdecoder:4.12.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.exifinterface:exifinterface:1.2.0@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Hildegard.app.main" />
 </module>

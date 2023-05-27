@@ -92,6 +92,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="25"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
                     android:inputType="number"
                     android:textColor="?attr/colorPrimaryDark"
                     android:textSize="20sp" />
@@ -119,6 +121,8 @@
                     android:layout_height="wrap_content"
                     android:hint="70"
                     android:inputType="numberDecimal"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
                     android:textColor="?attr/colorPrimaryDark"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -144,6 +148,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="170"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
                     android:inputType="number"
                     android:textColor="?attr/colorPrimaryDark"
                     android:textSize="20sp" />

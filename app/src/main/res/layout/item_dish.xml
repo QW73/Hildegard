@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="64dp"
+        android:layout_height="64dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dish Name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewCalories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calories: 0" />
+
+        <TextView
+            android:id="@+id/textViewProtein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Protein: 0g" />
+
+        <TextView
+            android:id="@+id/textViewFat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fat: 0g" />
+
+        <TextView
+            android:id="@+id/textViewCarbohydrates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Carbohydrates: 0g" />
+
+        <TextView
+            android:id="@+id/textViewIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients:"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ingredientsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</LinearLayout>

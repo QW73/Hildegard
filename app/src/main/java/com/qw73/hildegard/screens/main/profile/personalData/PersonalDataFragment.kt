@@ -152,23 +152,6 @@ class PersonalDataFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 sharedViewModel.saveBirthday(s.toString())
-                if(sharedViewModel.getOneMore() == true)
-                {
-                    sharedViewModel.saveIsDataFull(true)
-                    sharedViewModel.saveOneMore(false)
-
-                    val dateFormat = SimpleDateFormat("dd.MM.yyyy")
-                    val savedBirthday = sharedViewModel.getSavedBirthday()
-                    if (savedBirthday != null) {
-                        if (savedBirthday.isNotEmpty()) {
-                            val birthday = dateFormat.parse(savedBirthday)
-                            val age = viewModel.calculateAge(birthday)
-                            sharedViewModel.saveAge(age.toString())
-                        }
-                    }
-                    sharedViewModel.calculateDiet()
-                }
-
             }
 
             override fun afterTextChanged(s: Editable?) {}
@@ -196,6 +179,24 @@ class PersonalDataFragment : Fragment() {
                 val formattedDate =
                     String.format("%02d.%02d.%04d", selectedDay, selectedMonth + 1, selectedYear)
                 viewModel.setBirthday(formattedDate)
+
+                if(sharedViewModel.getOneMore() == true)
+                {
+                    sharedViewModel.saveIsDataFull(true)
+                    sharedViewModel.saveOneMore(false)
+
+                    val dateFormat = SimpleDateFormat("dd.MM.yyyy")
+                    val savedBirthday = sharedViewModel.getSavedBirthday()
+                    if (savedBirthday != null) {
+                        if (savedBirthday.isNotEmpty()) {
+                            val birthday = dateFormat.parse(savedBirthday)
+                            val age = viewModel.calculateAge(birthday)
+                            sharedViewModel.saveAge(age.toString())
+                        }
+                    }
+                    sharedViewModel.calculateDiet()
+
+                }
             },
             year, month, day
         )
