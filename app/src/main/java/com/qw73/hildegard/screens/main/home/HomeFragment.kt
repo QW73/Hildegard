@@ -62,9 +62,9 @@ class HomeFragment : Fragment() {
         // Check if the exclusions list is empty
         lifecycleScope.launch {
             val category1Dishes = if (viewModel.exclusions.isEmpty()) {
-                viewModel.getDishesByCategory("Category 1")
+                viewModel.getDishesByCategory("Завтрак")
             } else {
-                viewModel.getDishesByCategoryWithExclusions("Category 1",viewModel.exclusions)
+                viewModel.getDishesByCategoryWithExclusions("Завтрак",viewModel.exclusions)
             }
             dishAdapter1 = DishAdapter(category1Dishes)
             viewBinding.recyclerView.adapter = dishAdapter1
@@ -72,10 +72,10 @@ class HomeFragment : Fragment() {
             // Действия с полученным списком блюд для recyclerView1
 
             val category2Dishes = if (viewModel.exclusions.isEmpty()) {
-                viewModel.getDishesByCategory("Category 2")
+                viewModel.getDishesByCategory("Салат")
 
             } else {
-                viewModel.getDishesByCategoryWithExclusions("Category 2",viewModel.exclusions)
+                viewModel.getDishesByCategoryWithExclusions("Салат",viewModel.exclusions)
             }
 
             dishAdapter2 = DishAdapter(category2Dishes)

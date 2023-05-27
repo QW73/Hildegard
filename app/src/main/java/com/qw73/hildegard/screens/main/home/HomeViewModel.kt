@@ -19,7 +19,7 @@ class HomeViewModel @Inject constructor(
     private val _name = MutableLiveData<String>()
     val name: LiveData<String> get() = _name
 
-    val exclusions: MutableList<String> = mutableListOf("Exclusion 3")
+    val exclusions: MutableList<String> = mutableListOf()
 
     suspend fun getDishesByCategory(category: String): List<Dish> {
         return dishDao.getDishesByCategory(category)

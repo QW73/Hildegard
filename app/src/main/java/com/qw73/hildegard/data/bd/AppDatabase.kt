@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 
 
 @TypeConverters(ListConverter::class, BitmapConverter::class)
@@ -23,7 +25,8 @@ abstract class AppDatabase : RoomDatabase() {
                         context.applicationContext,
                         AppDatabase::class.java,
                         "dish_database"
-                    ).build()
+                    )
+                        .build()
                 }
             }
             return instance as AppDatabase

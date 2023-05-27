@@ -15,6 +15,8 @@ data class Dish(
     val category: String,
     val name: String,
     val image: String,
+    val price: Int,
+    val grams: Int,
     val calories: Int,
     val proteins: Int,
     val fats: Int,

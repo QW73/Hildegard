@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface DishDao {
-    @Query("SELECT * FROM dishes WHERE category = :category")
+    @Query("SELECT * FROM dishes WHERE category IN (:category)")
     suspend fun getDishesByCategory(category: String): List<Dish>
 
     @Query("SELECT * FROM dishes WHERE category = :category AND exclusions NOT IN (:exclusions)")
