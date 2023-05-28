@@ -31,6 +31,32 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     private var savedCarbohydrates: Int? = null
     private var savedFat: Int? = null
 
+    private var savedMilk: Boolean? = null
+    private var savedNuts: Boolean? = null
+    private var savedSugar: Boolean? = null
+    private var savedGluten: Boolean? = null
+    private var savedEggs: Boolean? = null
+
+
+    fun saveEggs(eggs: Boolean) {
+        savedEggs= eggs
+    }
+    fun saveSugar(sugar: Boolean) {
+        savedSugar= sugar
+    }
+
+    fun saveGluten(gluten: Boolean) {
+        savedGluten= gluten
+    }
+
+    fun saveMilk(milk: Boolean) {
+        savedMilk = milk
+    }
+
+    fun saveNuts(nuts: Boolean) {
+        savedNuts= nuts
+    }
+
     fun saveCalories(calories: Int) {
         savedCalories = calories
     }
@@ -154,6 +180,26 @@ class SharedViewModel @Inject constructor() : ViewModel() {
 
     fun getOneMore(): Boolean? {
         return savedOneMore
+    }
+
+    fun getGluten(): Boolean? {
+        return savedGluten
+    }
+
+    fun getEggs(): Boolean? {
+        return savedEggs
+    }
+
+    fun getMilk(): Boolean? {
+        return savedMilk
+    }
+
+    fun getNuts(): Boolean? {
+        return savedNuts
+    }
+
+    fun getSugar(): Boolean? {
+        return savedSugar
     }
 
     // добавить когда дата полная то и вычисление тутже

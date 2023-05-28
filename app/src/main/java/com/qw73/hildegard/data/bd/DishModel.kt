@@ -2,10 +2,8 @@ package com.qw73.hildegard.data.bd
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
-import androidx.room.TypeConverters
+import android.net.Uri
+import androidx.room.*
 import java.io.ByteArrayOutputStream
 
 @Entity(tableName = "dishes")
@@ -14,7 +12,7 @@ data class Dish(
     val id: Long = 0,
     val category: String,
     val name: String,
-    val image: String,
+    val image: Uri,
     val price: Int,
     val grams: Int,
     val calories: Int,
@@ -37,20 +35,14 @@ class ListConverter {
     }
 }
 
-class BitmapConverter {
+class UriConverter {
     @TypeConverter
-    fun fromBitmap(bitmap: Bitmap?): ByteArray? {
-        val outputStream = ByteArrayOutputStream()
-        bitmap?.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-        return outputStream.toByteArray()
+    fun fromUri(uri: Uri?): String? {
+        return uri?.toString()
     }
 
     @TypeConverter
-    fun toBitmap(byteArray: ByteArray?): Bitmap? {
-        return if (byteArray != null && byteArray.isNotEmpty()) {
-            BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
-        } else {
-            null
-        }
+    fun toUri(string: String?): Uri? {
+        return string?.let { Uri.parse(it) }
     }
 }

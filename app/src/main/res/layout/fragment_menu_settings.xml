@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,28 +8,262 @@
 
         <variable
             name="viewModel"
-            type="com.qw73.hildegard.menu_settings.MenuSettingsViewModel" />
+            type="com.qw73.hildegard.screens.main.profile.menu_settings.MenuSettingsViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_personal_data_"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".menu_settings.MenuSettingsFragment">
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        tools:context=".home.profile.menu_settings.MenuSettingsFragment">
 
-        <TextView
-            android:id="@+id/text_menuset"
+        <!-- Молочные продукты -->
+        <LinearLayout
+            android:id="@+id/container_milk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_milk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_milk"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_milk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_milk_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_yes"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_milk_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_no"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="294dp"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="24dp"
+            android:background="?attr/colorPrimaryDark" />
+
+        <!-- Глютен -->
+        <LinearLayout
+            android:id="@+id/container_gluten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_gluten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_gluten"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_gluten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_gluten_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_yes"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_gluten_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_no"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="294dp"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="24dp"
+            android:background="?attr/colorPrimaryDark" />
+
+        <!-- Яйца -->
+        <LinearLayout
+            android:id="@+id/container_eggs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_eggs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_eggs"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_eggs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_eggs_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_yes"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_eggs_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_no"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="294dp"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="24dp"
+            android:background="?attr/colorPrimaryDark" />
+
+        <!-- Орехи -->
+        <LinearLayout
+            android:id="@+id/container_nuts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nuts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_nuts"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_nuts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_nuts_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_yes"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_nuts_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_no"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="294dp"
+            android:layout_height="1dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="24dp"
+            android:background="?attr/colorPrimaryDark" />
+
+        <!-- Сахар -->
+        <LinearLayout
+            android:id="@+id/container_sugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_sugar"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_sugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_sugar_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_yes"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_sugar_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="?attr/colorAccent"
+                    android:text="@string/string_no"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

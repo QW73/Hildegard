@@ -38,11 +38,7 @@ class ParametersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupObservers()
         restoreValues()
-    }
-
-    private fun setupObservers() {
     }
 
     private fun restoreValues() {

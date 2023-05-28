@@ -62,5 +62,13 @@
     <string name="activity_level_3">Умеренная активность</string>
     <string name="activity_level_4">Высокая активность</string>
 
+    <string name="string_milk">Разрешить молочные продукты:</string>
+    <string name="string_yes">Да</string>
+    <string name="string_no">Нет</string>
+    <string name="string_gluten">Разрешить глютен:</string>
+    <string name="string_eggs">Разрешить яйца:</string>
+    <string name="string_sugar">Разрешить сахар:</string>
+    <string name="string_nuts">Разрешить орехи:</string>
+
 
 </resources>

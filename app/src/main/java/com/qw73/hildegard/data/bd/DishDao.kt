@@ -1,17 +1,36 @@
 package com.qw73.hildegard.data.bd
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import androidx.sqlite.db.SimpleSQLiteQuery
+import androidx.sqlite.db.SupportSQLiteQuery
 
 @Dao
 interface DishDao {
+
     @Query("SELECT * FROM dishes WHERE category IN (:category)")
     suspend fun getDishesByCategory(category: String): List<Dish>
 
-    @Query("SELECT * FROM dishes WHERE category = :category AND exclusions NOT IN (:exclusions)")
-    suspend fun getDishesByCategoryWithExclusions(category: String, exclusions: List<String>): List<Dish>
+    suspend fun getDishesByExclusions(category: String, exclusionList: List<String>?): List<Dish> {
+        val allDishes = getDishesByCategory(category)
+        val filteredDishes = mutableListOf<Dish>()
+
+        exclusionList?.let {
+            for (dish in allDishes) {
+                var excludeDish = false
+                for (exclusion in it) {
+                    if (dish.exclusions.contains(exclusion)) {
+                        excludeDish = true
+                        break
+                    }
+                }
+                if (!excludeDish) {
+                    filteredDishes.add(dish)
+                }
+            }
+        }
+
+        return filteredDishes
+    }
 
     @Query("SELECT * FROM dishes")
     suspend fun getDishes(): List<Dish>
@@ -24,4 +43,5 @@ interface DishDao {
 
     @Query("DELETE FROM sqlite_sequence WHERE name='dishes'")
     suspend fun resetId()
+
 }

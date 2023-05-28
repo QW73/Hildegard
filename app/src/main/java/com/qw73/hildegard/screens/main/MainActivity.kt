@@ -1,5 +1,6 @@
 package com.qw73.hildegard.screens.main
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.activity.viewModels
@@ -55,6 +56,16 @@ class MainActivity : BaseActivity() {
         binding = viewBinding as ActivityMainBinding
         navController = findNavController(R.id.main_fragment)
         setupActionBarWithNavController(navController)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            // Проверьте, является ли текущий фрагмент вашим фрагментом, в котором нужно скрыть ActionBar
+            if (destination.id == R.id.home_fragment) {
+                // Скрыть ActionBar в фрагменте HomeFragment
+                supportActionBar?.hide()
+            } else {
+                // Показать ActionBar для других фрагментов
+                supportActionBar?.show()
+            }
+        }
         setupSmoothBottomMenu()
         bindViews()
         bindObservers()
@@ -72,21 +83,26 @@ class MainActivity : BaseActivity() {
         val dish1 = Dish(
             category = "Завтрак",
             name = "Сырники с клубничным кули",
-            image = "image1.jpg",
+            image = Uri.parse("file:///android_asset/Сырники с клубничным кули.png"),
             price = 269,
             grams = 240,
             calories = 371,
             proteins = 21,
             fats = 12,
             carbohydrates = 44,
-            exclusions = listOf("Milk", "Sugar"),
-            ingredients = listOf("Сырники", "Клубничное кули", "Клубника", "Киви", "Ванильный соус", "Мята")
+            exclusions = listOf("Milk","Sugar"),
+            ingredients = listOf("Сырники",
+                "Клубничное кули",
+                "Клубника",
+                "Киви",
+                "Ванильный соус",
+                "Мята")
         )
 
         val dish2 = Dish(
             category = "Завтрак",
             name = "Кабачковые оладьи",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Кабачковые оладьи.png"),
             price = 269,
             grams = 230,
             calories = 254,
@@ -100,35 +116,47 @@ class MainActivity : BaseActivity() {
         val dish3 = Dish(
             category = "Завтрак",
             name = "Шакшука",
-            image = "image3.jpg",
+            image = Uri.parse("file:///android_asset/Шакшука.png"),
             price = 259,
-            grams  = 270,
+            grams = 270,
             calories = 161,
             proteins = 12,
             fats = 10,
             carbohydrates = 7,
             exclusions = listOf("Eggs"),
-            ingredients = listOf("Яйцо куриное", "Томаты", "Болгарский перец", "Лук", "Чеснок", "Кинза")
+            ingredients = listOf("Яйцо куриное",
+                "Томаты",
+                "Болгарский перец",
+                "Лук",
+                "Чеснок",
+                "Кинза")
         )
 
         val dish4 = Dish(
             category = "Завтрак",
             name = "Киш с курицей и брокколи",
-            image = "image3.jpg",
+            image = Uri.parse("file:///android_asset/Киш с курицей и брокколи.png"),
             price = 199,
             grams = 110,
             calories = 259,
             proteins = 7,
             fats = 19,
             carbohydrates = 25,
-            exclusions = listOf("Gluten", "Milk", "Eggs"),
-            ingredients = listOf("Песочное тесто", "Куриное бедро", "Брокколи", "Сливки", "Молоко", "Куриное яйцо", "Сыр Гауда", "Микс салата")
+            exclusions = listOf("Eggs","Gluten", "Milk"),
+            ingredients = listOf("Песочное тесто",
+                "Куриное бедро",
+                "Брокколи",
+                "Сливки",
+                "Молоко",
+                "Куриное яйцо",
+                "Сыр Гауда",
+                "Микс салата")
         )
 
         val dish5 = Dish(
             category = "Завтрак",
             name = "Овсяная каша на банановом молоке",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Овсяная каша на банановом молоке.png"),
             price = 199,
             grams = 200,
             calories = 153,
@@ -142,7 +170,7 @@ class MainActivity : BaseActivity() {
         val dish6 = Dish(
             category = "Завтрак",
             name = "Гречневая каша с грибами",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Гречневая каша с грибами.png"),
             price = 169,
             grams = 180,
             calories = 287,
@@ -156,21 +184,27 @@ class MainActivity : BaseActivity() {
         val dish7 = Dish(
             category = "Завтрак",
             name = "Блинчики с картофелем, грибами и беконом",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Блинчики с картофелем, грибами и беконом.png"),
             price = 258,
             grams = 260,
             calories = 387,
             proteins = 12,
             fats = 23,
             carbohydrates = 34,
-            exclusions = listOf("Gluten","Eggs","Milk"),
-            ingredients = listOf("Блинчики", "Картофель", "Шампиньоны", "Бекон", "Сметана", "Жареный лук", "Зелёный лук")
+            exclusions = listOf("Eggs","Gluten","Milk"),
+            ingredients = listOf("Блинчики",
+                "Картофель",
+                "Шампиньоны",
+                "Бекон",
+                "Сметана",
+                "Жареный лук",
+                "Зелёный лук")
         )
 
         val dish8 = Dish(
             category = "Завтрак",
             name = "Сэндвич с лососем и томатами в тортилье",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Сэндвич с лососем и томатами в тортилье.png"),
             price = 319,
             grams = 240,
             calories = 407,
@@ -178,41 +212,60 @@ class MainActivity : BaseActivity() {
             fats = 30,
             carbohydrates = 22,
             exclusions = listOf("Gluten","Milk"),
-            ingredients = listOf("Пшеничная тортилья", "Томаты", "Сметана", "Маринованный лосось", "Салат-латук", "Сырный соус", "Томатный соус", "Зеленый лук")
+            ingredients = listOf("Пшеничная тортилья",
+                "Томаты",
+                "Сметана",
+                "Маринованный лосось",
+                "Салат-латук",
+                "Сырный соус",
+                "Томатный соус",
+                "Зеленый лук")
         )
 
         val dish9 = Dish(
             category = "Завтрак",
             name = "Сырники со сметаной и цитрусовым медом",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Сырники со сметаной и цитрусовым медом.png"),
             price = 269,
             grams = 230,
             calories = 462,
             proteins = 22,
             fats = 22,
             carbohydrates = 45,
-            exclusions = listOf("Gluten","Eggs"),
-            ingredients = listOf("Творог", "Сахар", "Куриное яйцо", "Мука", "Сметана", "Цитрусовый мед", "Клубника", "Мята")
+            exclusions = listOf("Eggs","Gluten"),
+            ingredients = listOf("Творог",
+                "Сахар",
+                "Куриное яйцо",
+                "Мука",
+                "Сметана",
+                "Цитрусовый мед",
+                "Клубника",
+                "Мята")
         )
 
         val dish10 = Dish(
             category = "Завтрак",
             name = "Русский завтрак",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Русский завтрак.png"),
             price = 359,
             grams = 230,
             calories = 541,
             proteins = 26,
             fats = 42,
             carbohydrates = 15,
-            exclusions = listOf("Milk","Eggs"),
-            ingredients = listOf("Оливье с говядиной и курицей", "Блинчик с мясной начинкой из курицы и свинины", "Куриное яйцо", "Сосиски", "Зелёный лук", "Сметана")
+            exclusions = listOf("Eggs","Milk"),
+            ingredients = listOf("Оливье с говядиной и курицей",
+                "Блинчик с мясной начинкой из курицы и свинины",
+                "Куриное яйцо",
+                "Сосиски",
+                "Зелёный лук",
+                "Сметана")
         )
 
         val dish11 = Dish(
             category = "Салат",
             name = "Салат «Цезарь» с курицей",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Салат «Цезарь» с курицей.png"),
             price = 289,
             grams = 185,
             calories = 418,
@@ -220,13 +273,18 @@ class MainActivity : BaseActivity() {
             fats = 34,
             carbohydrates = 12,
             exclusions = listOf(),
-            ingredients = listOf("Куриное филе", "Салат-латук", "Чесночные гренки", "Пармезан", "Соус «Цезарь»", "Томаты черри")
+            ingredients = listOf("Куриное филе",
+                "Салат-латук",
+                "Чесночные гренки",
+                "Пармезан",
+                "Соус «Цезарь»",
+                "Томаты черри")
         )
 
         val dish12 = Dish(
             category = "Салат",
             name = "Салат «Греческий»",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Салат «Греческий».png"),
             price = 289,
             grams = 210,
             calories = 286,
@@ -234,13 +292,23 @@ class MainActivity : BaseActivity() {
             fats = 25,
             carbohydrates = 8,
             exclusions = listOf(),
-            ingredients = listOf("Салат-латук", "Болгарский перец", "Красный лук", "Оливки", "Огурец", "Томаты", "Сыр «Фета»", "Майоран", "Бальзамический уксус", "Оливковое масло", "Салат «Лолло Россо»")
+            ingredients = listOf("Салат-латук",
+                "Болгарский перец",
+                "Красный лук",
+                "Оливки",
+                "Огурец",
+                "Томаты",
+                "Сыр «Фета»",
+                "Майоран",
+                "Бальзамический уксус",
+                "Оливковое масло",
+                "Салат «Лолло Россо»")
         )
 
         val dish13 = Dish(
             category = "Салат",
             name = "Салат «Бора-Бора» с манго",
-            image = "image2.jpg",
+            image = Uri.parse("file:///android_asset/Салат «Бора-Бора» с манго.png"),
             price = 449,
             grams = 185,
             calories = 351,
@@ -248,10 +316,17 @@ class MainActivity : BaseActivity() {
             fats = 30,
             carbohydrates = 12,
             exclusions = listOf(),
-            ingredients = listOf("Креветки", "Авокадо", "Огурец", "Манго", "Микс салата", "Кунжут", "Лаймовая заправка")
+            ingredients = listOf("Креветки",
+                "Авокадо",
+                "Огурец",
+                "Манго",
+                "Микс салата",
+                "Кунжут",
+                "Лаймовая заправка")
         )
-        val dishes = listOf(dish1, dish2, dish3,dish4,dish5,dish6,dish7,dish8,dish9,dish10,
-                dish11, dish12, dish13,
+        val dishes = listOf(
+            dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10,
+            dish11, dish12, dish13,
         )
         dishDao.insertDishes(dishes)
     }
@@ -286,7 +361,7 @@ class MainActivity : BaseActivity() {
             }
 
             OPEN_ORDERS -> {
-               navController.navigate(R.id.action_profileFragment_to_ordersFragment)
+                navController.navigate(R.id.action_profileFragment_to_ordersFragment)
             }
             // Добавьте другие случаи для открытия других фрагментов
         }

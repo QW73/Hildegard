@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.viewbinding.ViewBinding
 import com.davidmiguel.numberkeyboard.NumberKeyboard
 import com.davidmiguel.numberkeyboard.NumberKeyboardListener
@@ -20,6 +21,7 @@ import com.qw73.hildegard.screens.authorization.sendOTP.SendOtpFragment
 import com.qw73.hildegard.screens.authorization.sendOTP.SendOtpViewModel
 import com.qw73.hildegard.screens.authorization.verifyOTP.VarifyOtpViewModel
 import com.qw73.hildegard.screens.authorization.verifyOTP.VerifyOtpFragment
+import com.qw73.hildegard.screens.main.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -51,7 +53,7 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
     /* view models objects */
     private val sendOtpViewModel: SendOtpViewModel by viewModels()
     private val verifyOtpViewModel: VarifyOtpViewModel by viewModels()
-
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     /* variable to identifier otp request state */
     private var otpRequestState = EVENT_SEND_OTP

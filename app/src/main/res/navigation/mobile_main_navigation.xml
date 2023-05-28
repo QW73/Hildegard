@@ -47,7 +47,7 @@
     <!-- Навигация "Настройки меню" -->
     <fragment
         android:id="@+id/menu_settings_fragment"
-        android:name="com.qw73.hildegard.menu_settings.MenuSettingsFragment"
+        android:name="com.qw73.hildegard.screens.main.profile.menu_settings.MenuSettingsFragment"
         android:label="Настройки меню"
         tools:layout="@layout/fragment_menu_settings">
         <action

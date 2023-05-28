@@ -11,10 +11,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
+    
     @Provides
     @Singleton
     fun provideAppDatabase(application: Application): AppDatabase {
         return Room.databaseBuilder(application, AppDatabase::class.java, "my-database")
+            .fallbackToDestructiveMigration()
             .build()
     }
 
@@ -23,3 +25,5 @@ object DatabaseModule {
         return database.dishDao()
     }
 }
+
+

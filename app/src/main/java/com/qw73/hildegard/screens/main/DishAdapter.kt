@@ -1,14 +1,14 @@
 package com.qw73.hildegard.screens.main
 
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.qw73.hildegard.data.bd.Dish
 import com.qw73.hildegard.databinding.ItemDishBinding
 
-class DishAdapter(private val dishes: List<Dish>) : RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
+class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,8 +30,10 @@ class DishAdapter(private val dishes: List<Dish>) : RecyclerView.Adapter<DishAda
         fun bind(dish: Dish) {
             // Bind dish data to the views in the item layout
             binding.textViewName.text = dish.name
-            // ...
-            // Bind other views
+
+            Glide.with(binding.root.context)
+                .load(dish.image)
+                .into(binding.imageView)
 
             // Example: Set click listener on the item view
             binding.root.setOnClickListener {

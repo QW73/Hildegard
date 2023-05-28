@@ -9,7 +9,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 
-@TypeConverters(ListConverter::class, BitmapConverter::class)
+@TypeConverters(ListConverter::class, UriConverter::class)
 @Database(entities = [Dish::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
