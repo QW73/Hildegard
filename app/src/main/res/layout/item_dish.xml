@@ -1,39 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="0dp"
     android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="12dp"
+    android:layout_marginVertical="20dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
     app:strokeWidth="4dp">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="124dp"
-        android:layout_height="124dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="186dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="168dp"
+            android:layout_height="168dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="18dp"
+            android:text="229 ₽"
+            android:textColor="#D7493D35"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
 
         <TextView
             android:id="@+id/textViewName"
-            android:layout_width="match_parent"
+            android:layout_width="186dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginBottom="3dp"
+            android:paddingHorizontal="18dp"
             android:text="Dish Name"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="2dp"
+            android:textColor="#D5493D35"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@id/textViewGram"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewPrice" />
 
-    </LinearLayout>
-</LinearLayout>
+        <TextView
+            android:id="@+id/textViewGram"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ssp_bold"
+            android:paddingHorizontal="18dp"
+            android:layout_marginTop="1dp"
+
+            android:text="120 г"
+            android:paddingBottom="14dp"
+            android:textColor="#8A493D35"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

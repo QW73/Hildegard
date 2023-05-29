@@ -12,6 +12,10 @@
             type="com.qw73.hildegard.screens.main.home.HomeViewModel" />
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
@@ -34,47 +38,102 @@
 
         <TextView
             android:id="@+id/tv_rec_menu"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ssp_bold"
             android:paddingHorizontal="24dp"
             android:paddingBottom="32dp"
             android:textAlignment="textStart"
-            android:text="До ежедневной нормы остлось:"
+            android:text="До ежедневной нормы осталось:"
             android:textColor="?attr/colorPrimaryDark"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/tv_greeting"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_breakfast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:layout_marginVertical="8dp"
+            android:text="Завтраки"
+            android:fontFamily="@font/ssp_bold"
+            android:paddingVertical="12dp"
+            android:textAlignment="textStart"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_rec_menu"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/greenish_white"
             android:orientation="horizontal"
+            android:paddingHorizontal="6dp"
+            android:scrollbars="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_rec_menu" />
+            app:layout_constraintTop_toBottomOf="@id/tv_breakfast" />
+
+        <TextView
+            android:id="@+id/tv_salad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:text="Салаты"
+            android:fontFamily="@font/ssp_bold"
+            android:paddingVertical="12dp"
+            android:textAlignment="textStart"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView2"
+            android:scrollbars="horizontal"
+            android:background="@color/greenish_white"
+            android:paddingHorizontal="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/recyclerView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/tv_salad" />
+
+        <TextView
+            android:id="@+id/tv_drinks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:text="Напитки"
+            android:fontFamily="@font/ssp_bold"
+            android:paddingVertical="12dp"
+            android:textAlignment="textStart"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView2"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView3"
+            android:scrollbars="horizontal"
+            android:background="@color/greenish_white"
+            android:paddingHorizontal="6dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerView2" />
+            app:layout_constraintTop_toBottomOf="@id/tv_drinks" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
