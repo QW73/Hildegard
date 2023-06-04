@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.qw73.hildegard.R
@@ -98,7 +99,7 @@ class HomeFragment : Fragment() {
             if (lifecycleScope.isActive) {
                 dishAdapter1 = DishAdapter(category1Dishes)
                 dishAdapter1.setOnDishClickListener { dish ->
-                   // openExpDishFragment(dish)
+                   openExpDishFragment(dish)
                 }
                 viewBinding.recyclerView.adapter = dishAdapter1
                 viewBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -115,7 +116,7 @@ class HomeFragment : Fragment() {
             if (lifecycleScope.isActive) {
                 dishAdapter2 = DishAdapter(category2Dishes)
                 dishAdapter2.setOnDishClickListener { dish ->
-                   // openExpDishFragment(dish)
+                   openExpDishFragment(dish)
                 }
                 viewBinding.recyclerView2.adapter = dishAdapter2
                 viewBinding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -123,19 +124,19 @@ class HomeFragment : Fragment() {
         }
     }
 
-  /*  private fun openExpDishFragment(dish: Dish) {
-        val fragment = ExpDishFragment()
-        fragment.setDish(dish)
 
-        requireActivity().supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.container, fragment)
-            .addToBackStack(null)
-            .commit()
-     }*/
-
-    private fun bindViews() {
+    private fun bindViews(){
         //
+    }
+
+    private fun openExpDishFragment(dish: Dish) {
+        val navController = Navigation.findNavController(requireView())
+
+        val bundle = Bundle().apply {
+            putLong("dishId", dish.id)
+        }
+
+        navController.navigate(R.id.action_home_Fragment_to_exp_dishFragment, bundle)
     }
 
     private fun setupObservers() {

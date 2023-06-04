@@ -35,6 +35,9 @@ interface DishDao {
     @Query("SELECT * FROM dishes")
     suspend fun getDishes(): List<Dish>
 
+    @Query("SELECT * FROM dishes WHERE id = :dishId")
+    suspend fun getDishById(dishId: Long): Dish?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDishes(dishes: List<Dish>)
 

@@ -8,6 +8,9 @@ import com.qw73.hildegard.data.bd.Dish
 import com.qw73.hildegard.data.bd.DishDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
@@ -17,6 +20,12 @@ class ExpDishViewModel @Inject constructor(
     private val dishDao: DishDao,
 ) : ViewModel() {
 
-
+    fun getDishById(dishId: Long): Dish? {
+        return runBlocking {
+            return@runBlocking withContext(Dispatchers.IO) {
+                dishDao.getDishById(dishId)
+            }
+        }
+    }
 
 }
