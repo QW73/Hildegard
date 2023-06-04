@@ -32,12 +32,14 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_list_square_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_main_component_svgrepo_com.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_menu_settings.xml" value="0.11" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_minus_svgrepo_com.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_note_document_page_paper_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_orders.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_page_blank_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_parameters.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_pedestrian_family_svgrepo_com.xml" value="0.11" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_plus_svgrepo_com.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_black.xml" value="0.197" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_svgrepo_com.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/ic_profile_svgrepo_com__1_.xml" value="0.11" />
@@ -90,7 +92,7 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/exp_item_dish.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_cart.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_chat.xml" value="0.1578125" />
-        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_exp_dish.xml" value="0.16" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_exp_dish.xml" value="0.2" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_menu_settings.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_orders.xml" value="0.1" />

@@ -64,7 +64,6 @@
                 android:layout_marginTop="1dp"
                 android:fontFamily="@font/ssp_bold"
                 android:paddingHorizontal="18dp"
-
                 android:paddingBottom="14dp"
                 android:text="120 г"
                 android:textColor="#8A493D35"
@@ -77,7 +76,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="104dp"
+            android:layout_width="118dp"
             android:layout_height="280dp"
             android:background="#A1EFEFEF"
             android:paddingVertical="16dp"
@@ -91,8 +90,8 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:paddingHorizontal="18dp"
-                android:text="Калорийность"
-                android:textColor="#D5493D35"
+                android:text="Калории:"
+                android:textColor="#9A493D35"
                 android:textSize="17sp" />
             <TextView
                 android:id="@+id/textViewCalories"
@@ -120,7 +119,7 @@
                 android:maxLines="1"
                 android:paddingHorizontal="18dp"
                 android:text="Белки:"
-                android:textColor="#D5493D35"
+                android:textColor="#9A493D35"
                 android:textSize="17sp" />
 
             <TextView
@@ -148,7 +147,7 @@
                 android:maxLines="1"
                 android:paddingHorizontal="18dp"
                 android:text="Жиры:"
-                android:textColor="#D5493D35"
+                android:textColor="#9A493D35"
                 android:textSize="17sp" />
             <TextView
                 android:id="@+id/textViewFat"
@@ -176,7 +175,7 @@
                 android:maxLines="1"
                 android:paddingHorizontal="18dp"
                 android:text="Углеводы:"
-                android:textColor="#D5493D35"
+                android:textColor="#9A493D35"
                 android:textSize="17sp" />
             <TextView
                 android:id="@+id/textViewCarbohydrates"

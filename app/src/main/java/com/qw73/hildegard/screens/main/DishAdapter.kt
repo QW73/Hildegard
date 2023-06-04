@@ -67,7 +67,10 @@ class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAda
             // Bind dish data to the views in the item layout
             binding.textViewName.text = dish.name
             binding.textViewPrice.text = dish.price.toString() + " ₽"
-            binding.textViewGram.text = dish.grams.toString() + " г"
+            binding.textViewGram.text = dish.grams.toString() + " гр"
+            binding.textViewProtein.text = dish.proteins.toString() + " гр"
+            binding.textViewFat.text = dish.fats.toString() + " гр"
+            binding.textViewCarbohydrates.text = dish.carbohydrates.toString() + " гр"
             binding.textViewCalories.text = dish.calories.toString() +" кКал"
 
             Glide.with(binding.root.context)

@@ -49,8 +49,20 @@ class ExpDishFragment : Fragment() {
             val dish = viewModel.getDishById(dishId)
             if (dish != null) {
                 // Используйте информацию о блюде для обновления пользовательского интерфейса
-                viewBinding.dishName.text = dish.name
-                // Другие поля блюда
+                viewBinding.expDishName.text = dish.name
+                viewBinding.expIngredients.text = dish.ingredients.joinToString(", ")
+                viewBinding.expProtein.text = dish.proteins.toString() + " г"
+                viewBinding.expFat.text = dish.fats.toString() + " г"
+                viewBinding.expCarbohydrates.text = dish.carbohydrates.toString() + " г"
+                viewBinding.expCalories.text = dish.calories.toString() + " кКал"
+                viewBinding.expGram.text = "  / "+ dish.grams.toString() + " грамм"
+                viewBinding.expPrice.text = dish.price.toString() + " ₽"
+
+                Glide.with( viewBinding.root.context)
+                    .load(dish.image)
+                    .into( viewBinding.iconForExpDish)
+
+            // Другие поля блюда
             }
         }
     }
