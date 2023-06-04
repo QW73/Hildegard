@@ -69,6 +69,7 @@
     <string name="string_eggs">Разрешить яйца:</string>
     <string name="string_sugar">Разрешить сахар:</string>
     <string name="string_nuts">Разрешить орехи:</string>
+    <string name="string_add_to_cart">Добавить в корзину</string>
 
 
 </resources>

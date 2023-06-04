@@ -2,6 +2,7 @@ package com.qw73.hildegard.screens.main.home.exp
 
 import android.app.ActionBar
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,7 @@ class ExpDishFragment : Fragment() {
 
     /* view mode object */
     private val viewModel: ExpDishViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,18 +64,55 @@ class ExpDishFragment : Fragment() {
                     .load(dish.image)
                     .into( viewBinding.iconForExpDish)
 
-            // Другие поля блюда
+                viewBinding.buttonAdd.setOnClickListener {
+                    viewBinding.buttonAdd.visibility = View.GONE
+                    viewBinding.addButtonsLayout.visibility = View.VISIBLE
+
+                    if (viewModel.count.value == 0) {
+                        viewModel.incrementCount()
+                    }
+                }
+
+                viewBinding.icMinus.setOnClickListener {
+                    viewModel.decrementCount()
+                }
+
+                viewBinding.icPlus.setOnClickListener {
+                    viewModel.incrementCount()
+                }
+
+                // ...
             }
         }
     }
 
-    private fun bindViews() {
+    override fun onPause() {
+        super.onPause()
+        viewModel.saveCount()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.restoreCount()
+    }
+
+    private fun bindViews() {
+        viewModel.count.observe(viewLifecycleOwner) { count ->
+            viewBinding.expCount.text = count.toString()
+
+            if (count < 1) {
+                viewBinding.addButtonsLayout.visibility = View.GONE
+                viewBinding.buttonAdd.visibility = View.VISIBLE
+            } else {
+                viewBinding.addButtonsLayout.visibility = View.VISIBLE
+                viewBinding.buttonAdd.visibility = View.GONE
+            }
+        }
     }
 
     companion object Companion {
-        fun instance(): ProfileFragment {
-            return ProfileFragment()
+        fun instance(): ExpDishFragment {
+            return ExpDishFragment()
         }
     }
 }

@@ -1,23 +1,18 @@
 package com.qw73.hildegard.screens.main.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.qw73.hildegard.R
 import com.qw73.hildegard.data.bd.Dish
 import com.qw73.hildegard.databinding.FragmentHomeBinding
-import com.qw73.hildegard.screens.main.DishAdapter
 import com.qw73.hildegard.screens.main.SharedViewModel
-import com.qw73.hildegard.screens.main.home.exp.ExpDishFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive

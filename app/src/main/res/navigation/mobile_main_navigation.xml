@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/cart_fragment"
-        android:name="com.qw73.hildegard.cart.CartFragment"
+        android:name="com.qw73.hildegard.screens.main.cart.CartFragment"
         android:label="Заказы"
         tools:layout="@layout/fragment_cart">
         <action
