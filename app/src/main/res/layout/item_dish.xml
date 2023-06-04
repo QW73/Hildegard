@@ -9,66 +9,186 @@
     app:cardElevation="0dp"
     app:strokeWidth="4dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="186dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="168dp"
-            android:layout_height="168dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/textViewPrice"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="186dp"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="18dp"
-            android:text="229 ₽"
-            android:textColor="#D7493D35"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView" />
+            android:layout_height="280dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewName"
-            android:layout_width="186dp"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:layout_marginBottom="3dp"
-            android:paddingHorizontal="18dp"
-            android:text="Dish Name"
-            android:layout_marginTop="2dp"
-            android:textColor="#D5493D35"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@id/textViewGram"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewPrice" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewGram"
-            android:layout_width="186dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/ssp_bold"
-            android:paddingHorizontal="18dp"
-            android:layout_marginTop="1dp"
 
-            android:text="120 г"
-            android:paddingBottom="14dp"
-            android:textColor="#8A493D35"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewName" />
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="18dp"
+                android:text="229 ₽"
+                android:textColor="#D7493D35"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="3dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingHorizontal="18dp"
+                android:text="Dish Name v dve trochki"
+                android:textColor="#D5493D35"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@id/textViewGram"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewPrice" />
+
+            <TextView
+                android:id="@+id/textViewGram"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/ssp_bold"
+                android:paddingHorizontal="18dp"
+
+                android:paddingBottom="14dp"
+                android:text="120 г"
+                android:textColor="#8A493D35"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="104dp"
+            android:layout_height="280dp"
+            android:background="#A1EFEFEF"
+            android:paddingVertical="16dp"
+            android:gravity="center"
+            android:id="@+id/expandedLayout"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="Калорийность"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/textViewCalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="540 кКал"
+                android:textColor="#D5493D35"
+                android:textSize="17sp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="11dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="Белки:"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textViewProtein"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="27 г"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="11dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="Жиры:"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/textViewFat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="16 г"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="11dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="Углеводы:"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/textViewCarbohydrates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="18dp"
+                android:text="16 г"
+                android:textColor="#D5493D35"
+                android:textSize="17sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.cardview.widget.CardView>

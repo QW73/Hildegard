@@ -7,6 +7,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.qw73.hildegard.data.bd.сonverter.ListConverter
+import com.qw73.hildegard.data.bd.сonverter.UriConverter
 
 
 @TypeConverters(ListConverter::class, UriConverter::class)

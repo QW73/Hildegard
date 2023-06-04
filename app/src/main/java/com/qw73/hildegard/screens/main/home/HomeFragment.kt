@@ -5,16 +5,21 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.qw73.hildegard.R
+import com.qw73.hildegard.data.bd.Dish
 import com.qw73.hildegard.databinding.FragmentHomeBinding
 import com.qw73.hildegard.screens.main.DishAdapter
 import com.qw73.hildegard.screens.main.SharedViewModel
+import com.qw73.hildegard.screens.main.home.exp.ExpDishFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.*
@@ -82,7 +87,6 @@ class HomeFragment : Fragment() {
 
     private fun bindAdapters(exclusions: List<String>) {
         lifecycleScope.launch {
-
             val category1Dishes = if (exclusions.isEmpty()) {
                 viewModel.getDishesByCategory("Завтрак")
             } else {
@@ -90,9 +94,15 @@ class HomeFragment : Fragment() {
                     viewModel.getDishesByExclusions("Завтрак", exclusions)
                 }
             }
-            dishAdapter1 = DishAdapter(category1Dishes)
-            viewBinding.recyclerView.adapter = dishAdapter1
-            viewBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+            if (lifecycleScope.isActive) {
+                dishAdapter1 = DishAdapter(category1Dishes)
+                dishAdapter1.setOnDishClickListener { dish ->
+                   // openExpDishFragment(dish)
+                }
+                viewBinding.recyclerView.adapter = dishAdapter1
+                viewBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            }
 
             val category2Dishes = if (exclusions.isEmpty()) {
                 viewModel.getDishesByCategory("Салат")
@@ -101,11 +111,28 @@ class HomeFragment : Fragment() {
                     viewModel.getDishesByExclusions("Салат", exclusions)
                 }
             }
-            dishAdapter2 = DishAdapter(category2Dishes)
-            viewBinding.recyclerView2.adapter = dishAdapter2
-            viewBinding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+            if (lifecycleScope.isActive) {
+                dishAdapter2 = DishAdapter(category2Dishes)
+                dishAdapter2.setOnDishClickListener { dish ->
+                   // openExpDishFragment(dish)
+                }
+                viewBinding.recyclerView2.adapter = dishAdapter2
+                viewBinding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            }
         }
     }
+
+  /*  private fun openExpDishFragment(dish: Dish) {
+        val fragment = ExpDishFragment()
+        fragment.setDish(dish)
+
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment)
+            .addToBackStack(null)
+            .commit()
+     }*/
 
     private fun bindViews() {
         //
