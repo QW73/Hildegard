@@ -7,18 +7,24 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.qw73.hildegard.databinding.FragmentCartBinding
 import com.qw73.hildegard.databinding.FragmentProfileBinding
+import com.qw73.hildegard.screens.main.home.DishAdapter
 import com.qw73.hildegard.screens.main.profile.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class CartFragment : Fragment() {
 
     lateinit var viewBinding: FragmentCartBinding
 
-
+    private lateinit var cartAdapter: CartAdapter
 
     /* view mode object */
     private val viewModel: CartViewModel by activityViewModels()
@@ -34,6 +40,22 @@ class CartFragment : Fragment() {
         return viewBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        bindAdapters()
+    }
+
+    private fun bindAdapters() {
+        lifecycleScope.launch {
+
+            if (lifecycleScope.isActive) {
+                cartAdapter = CartAdapter(viewModel.getDishForCart())
+
+                viewBinding.recyclerViewCart.adapter = cartAdapter
+                viewBinding.recyclerViewCart.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            }
+        }
+    }
 
     private fun bindViews() {
 

@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.qw73.hildegard.R
 import com.qw73.hildegard.databinding.FragmentPersonalDataBinding
-import com.qw73.hildegard.screens.main.SharedViewModel
+import com.qw73.hildegard.screens.main.profile.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*

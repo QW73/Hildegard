@@ -10,9 +10,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.qw73.hildegard.R
-import com.qw73.hildegard.data.bd.Dish
+import com.qw73.hildegard.data.bd.dish.Dish
 import com.qw73.hildegard.databinding.FragmentHomeBinding
-import com.qw73.hildegard.screens.main.SharedViewModel
+import com.qw73.hildegard.screens.main.profile.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive

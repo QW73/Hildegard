@@ -1,53 +1,24 @@
 package com.qw73.hildegard.screens.main.home.exp
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
-
 import androidx.lifecycle.ViewModel
-import com.qw73.hildegard.data.bd.Dish
-import com.qw73.hildegard.data.bd.DishDao
+import androidx.lifecycle.viewModelScope
+import com.qw73.hildegard.data.bd.dish.Dish
+import com.qw73.hildegard.data.bd.dish.DishDao
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-
 @HiltViewModel
 class ExpDishViewModel @Inject constructor(
-    @ApplicationContext private val context: Context,
     private val dishDao: DishDao,
-    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-
-    private val COUNT_KEY = "count"
-    private val _count = MutableLiveData<Int>()
-
-    val count: LiveData<Int>
-        get() = _count
-
-    init {
-        _count.value = savedStateHandle.get<Int>(COUNT_KEY) ?: 0
-    }
-
-    fun incrementCount() {
-        _count.value = (_count.value ?: 0) + 1
-    }
-
-    fun decrementCount() {
-        val currentCount = _count.value ?: 0
-        if (currentCount > 0) {
-            _count.value = currentCount - 1
-        }
-    }
-
-    fun resetCount() {
-        _count.value = 0
-    }
+    private val dishLiveDataMap: MutableMap<Long, MutableLiveData<Dish>> = mutableMapOf()
 
     fun getDishById(dishId: Long): Dish? {
         return runBlocking {
@@ -57,16 +28,26 @@ class ExpDishViewModel @Inject constructor(
         }
     }
 
-    fun saveCount() {
-        savedStateHandle.set(COUNT_KEY, _count.value)
+    fun getDishLiveData(dishId: Long): LiveData<Dish> {
+        if (!dishLiveDataMap.containsKey(dishId)) {
+            dishLiveDataMap[dishId] = MutableLiveData()
+        }
+        return dishLiveDataMap[dishId]!!
     }
 
-    fun restoreCount() {
-        _count.value = savedStateHandle.get<Int>(COUNT_KEY) ?: 0
+    private fun updateDishLiveData(dishId: Long, dish: Dish) {
+        if (dishLiveDataMap.containsKey(dishId)) {
+            dishLiveDataMap[dishId]?.postValue(dish)
+        }
     }
 
-    fun setCount(count: Int) {
-        _count.value = count
+    fun updateDishCount(dishId: Long, newCount: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            dishDao.updateDishCount(dishId, newCount)
+            val updatedDish = dishDao.getDishById(dishId)
+            updatedDish?.let {
+                updateDishLiveData(dishId, it)
+            }
+        }
     }
-
 }

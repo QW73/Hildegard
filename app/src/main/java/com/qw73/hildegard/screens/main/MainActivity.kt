@@ -14,8 +14,8 @@ import com.qw73.hildegard.data.OPEN_MENU_SETTING
 import com.qw73.hildegard.data.OPEN_ORDERS
 import com.qw73.hildegard.data.OPEN_PARAMETERS
 import com.qw73.hildegard.data.OPEN_PERSONAL_DATA
-import com.qw73.hildegard.data.bd.Dish
-import com.qw73.hildegard.data.bd.DishDao
+import com.qw73.hildegard.data.bd.dish.Dish
+import com.qw73.hildegard.data.bd.dish.DishDao
 import com.qw73.hildegard.data.impl.prefs.IPref
 import com.qw73.hildegard.data.impl.resrc.IRes
 import com.qw73.hildegard.databinding.ActivityMainBinding
@@ -90,13 +90,16 @@ class MainActivity : BaseActivity() {
             proteins = 21,
             fats = 12,
             carbohydrates = 44,
-            exclusions = listOf("Milk","Sugar"),
+            exclusions = listOf("Milk", "Sugar"),
             ingredients = listOf("Сырники",
                 "клубничное кули",
                 "клубника",
                 "киви",
                 "ванильный соус",
-                "мята")
+                "мята"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish2 = Dish(
@@ -110,7 +113,10 @@ class MainActivity : BaseActivity() {
             fats = 17,
             carbohydrates = 20,
             exclusions = listOf("Milk"),
-            ingredients = listOf("Оладьи из кабачка", "томаты черри", "микс салата", "сметана")
+            ingredients = listOf("Оладьи из кабачка", "томаты черри", "микс салата", "сметана"),
+                    count = 0,
+            date = null,
+            address = null
         )
 
         val dish3 = Dish(
@@ -129,7 +135,10 @@ class MainActivity : BaseActivity() {
                 "болгарский перец",
                 "лук",
                 "чеснок",
-                "кинза")
+                "кинза"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish4 = Dish(
@@ -142,7 +151,7 @@ class MainActivity : BaseActivity() {
             proteins = 7,
             fats = 19,
             carbohydrates = 25,
-            exclusions = listOf("Eggs","Gluten", "Milk"),
+            exclusions = listOf("Eggs", "Gluten", "Milk"),
             ingredients = listOf("Песочное тесто",
                 "куриное бедро",
                 "брокколи",
@@ -150,7 +159,10 @@ class MainActivity : BaseActivity() {
                 "молоко",
                 "куриное яйцо",
                 "сыр Гауда",
-                "микс салата")
+                "микс салата"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish5 = Dish(
@@ -163,8 +175,11 @@ class MainActivity : BaseActivity() {
             proteins = 6,
             fats = 5,
             carbohydrates = 22,
-            exclusions = listOf("Gluten","Sugar"),
-            ingredients = listOf("Овсяные хлопья", "банановое молоко", "масло", "сахар")
+            exclusions = listOf("Gluten", "Sugar"),
+            ingredients = listOf("Овсяные хлопья", "банановое молоко", "масло", "сахар"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish6 = Dish(
@@ -178,7 +193,10 @@ class MainActivity : BaseActivity() {
             fats = 3,
             carbohydrates = 52,
             exclusions = listOf("Gluten"),
-            ingredients = listOf("Гречневая крупа", "шампиньоны", "лук", "растительное масло")
+            ingredients = listOf("Гречневая крупа", "шампиньоны", "лук", "растительное масло"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish7 = Dish(
@@ -191,14 +209,17 @@ class MainActivity : BaseActivity() {
             proteins = 12,
             fats = 23,
             carbohydrates = 34,
-            exclusions = listOf("Eggs","Gluten","Milk"),
+            exclusions = listOf("Eggs", "Gluten", "Milk"),
             ingredients = listOf("Блинчики",
                 "картофель",
                 "шампиньоны",
                 "бекон",
                 "сметана",
                 "жареный лук",
-                "зелёный лук")
+                "зелёный лук"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish8 = Dish(
@@ -211,7 +232,7 @@ class MainActivity : BaseActivity() {
             proteins = 12,
             fats = 30,
             carbohydrates = 22,
-            exclusions = listOf("Gluten","Milk"),
+            exclusions = listOf("Gluten", "Milk"),
             ingredients = listOf("Пшеничная тортилья",
                 "томаты",
                 "сметана",
@@ -219,7 +240,10 @@ class MainActivity : BaseActivity() {
                 "салат-латук",
                 "сырный соус",
                 "томатный соус",
-                "зеленый лук")
+                "зеленый лук"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish9 = Dish(
@@ -232,7 +256,7 @@ class MainActivity : BaseActivity() {
             proteins = 22,
             fats = 22,
             carbohydrates = 45,
-            exclusions = listOf("Eggs","Gluten"),
+            exclusions = listOf("Eggs", "Gluten"),
             ingredients = listOf("Творог",
                 "сахар",
                 "куриное яйцо",
@@ -240,7 +264,10 @@ class MainActivity : BaseActivity() {
                 "сметана",
                 "цитрусовый мед",
                 "клубника",
-                "мята")
+                "мята"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish10 = Dish(
@@ -253,13 +280,16 @@ class MainActivity : BaseActivity() {
             proteins = 26,
             fats = 42,
             carbohydrates = 15,
-            exclusions = listOf("Eggs","Milk"),
+            exclusions = listOf("Eggs", "Milk"),
             ingredients = listOf("Оливье с говядиной и курицей",
                 "блинчик с мясной начинкой из курицы и свинины",
                 "куриное яйцо",
                 "сосиски",
                 "зелёный лук",
-                "сметана")
+                "сметана"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish11 = Dish(
@@ -278,7 +308,10 @@ class MainActivity : BaseActivity() {
                 "чесночные гренки",
                 "пармезан",
                 "соус «Цезарь»",
-                "томаты черри")
+                "томаты черри"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish12 = Dish(
@@ -302,7 +335,10 @@ class MainActivity : BaseActivity() {
                 "майоран",
                 "бальзамический уксус",
                 "оливковое масло",
-                "салат «Лолло Россо»")
+                "салат «Лолло Россо»"),
+            count = 0,
+            date = null,
+            address = null
         )
 
         val dish13 = Dish(
@@ -322,7 +358,10 @@ class MainActivity : BaseActivity() {
                 "манго",
                 "микс салата",
                 "кунжут",
-                "лаймовая заправка")
+                "лаймовая заправка"),
+            count = 0,
+            date = null,
+            address = null
         )
         val dishes = listOf(
             dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10,

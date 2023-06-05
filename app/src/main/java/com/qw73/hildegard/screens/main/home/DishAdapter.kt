@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.qw73.hildegard.data.bd.Dish
+import com.qw73.hildegard.data.bd.dish.Dish
 import com.qw73.hildegard.databinding.ItemDishBinding
 
 class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAdapter.DishViewHolder>() {

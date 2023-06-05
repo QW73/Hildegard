@@ -2,18 +2,12 @@ package com.qw73.hildegard.screens.main.home
 
 
 import android.content.Context
-import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.qw73.hildegard.R
-import com.qw73.hildegard.data.OPEN_MENU_SETTING
-import com.qw73.hildegard.data.OPEN_ORDERS
-import com.qw73.hildegard.data.OPEN_PARAMETERS
-import com.qw73.hildegard.data.OPEN_PERSONAL_DATA
 
-import com.qw73.hildegard.data.bd.Dish
-import com.qw73.hildegard.data.bd.DishDao
+import com.qw73.hildegard.data.bd.dish.Dish
+import com.qw73.hildegard.data.bd.dish.DishDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

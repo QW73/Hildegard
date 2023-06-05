@@ -1,11 +1,9 @@
 package com.qw73.hildegard.screens.authorization
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.viewbinding.ViewBinding
 import com.davidmiguel.numberkeyboard.NumberKeyboard
 import com.davidmiguel.numberkeyboard.NumberKeyboardListener
@@ -21,7 +19,7 @@ import com.qw73.hildegard.screens.authorization.sendOTP.SendOtpFragment
 import com.qw73.hildegard.screens.authorization.sendOTP.SendOtpViewModel
 import com.qw73.hildegard.screens.authorization.verifyOTP.VarifyOtpViewModel
 import com.qw73.hildegard.screens.authorization.verifyOTP.VerifyOtpFragment
-import com.qw73.hildegard.screens.main.SharedViewModel
+import com.qw73.hildegard.screens.main.profile.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
