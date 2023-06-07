@@ -1,6 +1,5 @@
 package com.qw73.hildegard.screens.authorization.sendOTP
 
-import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.databinding.ObservableBoolean
@@ -8,13 +7,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.qw73.hildegard.data.EVENT_SEND_OTP
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 @HiltViewModel
 class SendOtpViewModel @Inject constructor(
-    @ApplicationContext private val context: Context,
-    private val otpUseCase: OtpUseCase): ViewModel() {
+    private val otpUseCase: OtpUseCase,
+) : ViewModel() {
 
     /* observable fields */
     val PhoneEnabled = ObservableBoolean(true)
@@ -27,11 +25,11 @@ class SendOtpViewModel @Inject constructor(
     /* live data for sending events back to view */
     val otpEvents: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
 
-    private val _phoneNumber = MutableLiveData<String>("")
-
     fun onSendOtpClick() {
         Error.set(false)
-        mPhoneNumber = mPhoneNumber.replace("+","").replace("(", "").replace(")", "").replace("-", "").replace(" ", "").replaceFirst("7","")
+        mPhoneNumber =
+            mPhoneNumber.replace("+", "").replace("(", "").replace(")", "").replace("-", "")
+                .replace(" ", "").replaceFirst("7", "")
         otpUseCase.setPhoneNumber(mPhoneNumber)
         val isNumberValid = otpUseCase.isNumberValid()
         Error.set(!isNumberValid)
@@ -49,7 +47,7 @@ class SendOtpViewModel @Inject constructor(
         return otpUseCase.formattedNumber()
     }
 
-    val phoneListener = object: TextWatcher{
+    val phoneListener = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}

@@ -1,4 +1,4 @@
-package com.qw73.hildegard.data.bd.сonverter
+package com.qw73.hildegard.data.bd.сonverters
 
 import androidx.room.TypeConverter
 

@@ -20,8 +20,6 @@ data class Dish(
     val exclusions: List<String>,
     val ingredients: List<String>,
     val count: Int,
-    val date: String?,
-    val address: String?
 )
 
 

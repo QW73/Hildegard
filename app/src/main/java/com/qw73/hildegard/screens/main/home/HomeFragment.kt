@@ -36,12 +36,10 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
         viewBinding.viewModel = viewModel
         bindViews()
-
-
         return viewBinding.root
     }
 
@@ -61,7 +59,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun bindExclusions() {
-        var list: List<String> = listOf()
+        val list: MutableList<String> = mutableListOf()
         if (sharedViewModel.getSugar() == true) {
             list += "Sugar"
         }
@@ -94,10 +92,11 @@ class HomeFragment : Fragment() {
             if (lifecycleScope.isActive) {
                 dishAdapter1 = DishAdapter(category1Dishes)
                 dishAdapter1.setOnDishClickListener { dish ->
-                   openExpDishFragment(dish)
+                    openExpDishFragment(dish)
                 }
                 viewBinding.recyclerView.adapter = dishAdapter1
-                viewBinding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                viewBinding.recyclerView.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             }
 
             val category2Dishes = if (exclusions.isEmpty()) {
@@ -111,16 +110,17 @@ class HomeFragment : Fragment() {
             if (lifecycleScope.isActive) {
                 dishAdapter2 = DishAdapter(category2Dishes)
                 dishAdapter2.setOnDishClickListener { dish ->
-                   openExpDishFragment(dish)
+                    openExpDishFragment(dish)
                 }
                 viewBinding.recyclerView2.adapter = dishAdapter2
-                viewBinding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                viewBinding.recyclerView2.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             }
         }
     }
 
 
-    private fun bindViews(){
+    private fun bindViews() {
         //
     }
 
@@ -151,7 +151,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        sharedViewModel.name.observe(viewLifecycleOwner) { name ->
+        sharedViewModel.name.observe(viewLifecycleOwner) {
             updateGreetingText()
         }
 
@@ -159,8 +159,7 @@ class HomeFragment : Fragment() {
 
     private fun updateGreetingText() {
         val name = sharedViewModel.name.value
-        val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
-        val greetingText = when (currentHour) {
+        val greetingText = when (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
             in 6..11 -> getString(R.string.good_morning)
             in 12..17 -> getString(R.string.good_afternoon)
             in 18..21 -> getString(R.string.good_evening)

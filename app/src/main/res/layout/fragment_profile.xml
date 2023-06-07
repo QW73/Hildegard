@@ -24,8 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/profile_middle_item_container"
-            android:gravity="left|center"
             android:clickable="true"
+            android:gravity="left|center"
             android:orientation="horizontal"
             android:paddingHorizontal="18dp"
             android:paddingVertical="2dp">

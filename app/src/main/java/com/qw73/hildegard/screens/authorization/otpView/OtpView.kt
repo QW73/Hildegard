@@ -1,10 +1,8 @@
 package com.qw73.hildegard.screens.authorization.otpView
 
-import android.animation.ValueAnimator
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.*
-import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.text.InputFilter
 import android.text.TextUtils
@@ -14,15 +12,13 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
 import androidx.annotation.ColorInt
-import androidx.annotation.DrawableRes
-import androidx.annotation.Px
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import com.qw73.hildegard.R
 import com.qw73.hildegard.screens.authorization.otpView.DefaultMovementMethod.Companion.instance
+import kotlin.math.abs
+import kotlin.math.roundToInt
 
 class OtpView @JvmOverloads constructor(
     context: Context,
@@ -45,8 +41,7 @@ class OtpView @JvmOverloads constructor(
      * @see .setLineColor
      */
     //    private final TextPaint animatorTextPaint = new TextPaint();
-    var lineColors: ColorStateList?
-        private set
+    private var lineColors: ColorStateList?
 
     /**
      *
@@ -63,15 +58,12 @@ class OtpView @JvmOverloads constructor(
     private val itemLineRect = RectF()
     private val path = Path()
     private val itemCenterPoint = PointF()
-    private val defaultAddAnimator: ValueAnimator? = null
-    private var isAnimationEnable = false
     private var blink: Blink? = null
     private var isCursorVisible: Boolean
     private var drawCursor = false
     private var cursorHeight = 0f
     private var cursorWidth: Int
     private var cursorColor: Int
-    private var itemBackgroundResource = 0
     private var itemBackground: Drawable?
     private var hideLineWhenFilled: Boolean
     private val rtlTextDirection: Boolean
@@ -182,8 +174,7 @@ class OtpView @JvmOverloads constructor(
     }
 
     private fun drawOtpView(canvas: Canvas) {
-        val nextItemToFill: Int
-        nextItemToFill = if (rtlTextDirection) {
+        val nextItemToFill: Int = if (rtlTextDirection) {
             otpViewItemCount - 1
         } else {
             if (text != null) {
@@ -257,7 +248,7 @@ class OtpView @JvmOverloads constructor(
             (isNumberInputType(inputType) ||
                     isPasswordInputType(inputType))
         ) {
-            drawMaskingText(canvas, i, Character.toString(maskingChar!![0]))
+            drawMaskingText(canvas, i, maskingChar!![0].toString())
         } else if (isPasswordInputType(inputType)) {
             drawCircle(canvas, i)
         } else {
@@ -277,10 +268,10 @@ class OtpView @JvmOverloads constructor(
             return
         }
         val delta = lineWidth.toFloat() / 2
-        val left = Math.round(itemBorderRect.left - delta)
-        val top = Math.round(itemBorderRect.top - delta)
-        val right = Math.round(itemBorderRect.right + delta)
-        val bottom = Math.round(itemBorderRect.bottom + delta)
+        val left = (itemBorderRect.left - delta).roundToInt()
+        val top = (itemBorderRect.top - delta).roundToInt()
+        val right = (itemBorderRect.right + delta).roundToInt()
+        val bottom = (itemBorderRect.bottom + delta).roundToInt()
         itemBackground!!.setBounds(left, top, right, bottom)
         itemBackground!!.state = backgroundState ?: drawableState
         itemBackground!!.draw(canvas)
@@ -325,13 +316,17 @@ class OtpView @JvmOverloads constructor(
         drawRight = true
         drawLeft = drawRight
         if (otpViewItemSpacing == 0 && otpViewItemCount > 1) {
-            if (i == 0) {
-                drawRight = false
-            } else if (i == otpViewItemCount - 1) {
-                drawLeft = false
-            } else {
-                drawRight = false
-                drawLeft = drawRight
+            when (i) {
+                0 -> {
+                    drawRight = false
+                }
+                otpViewItemCount - 1 -> {
+                    drawLeft = false
+                }
+                else -> {
+                    drawRight = false
+                    drawLeft = drawRight
+                }
             }
         }
         paint.style = Paint.Style.FILL
@@ -419,7 +414,7 @@ class OtpView @JvmOverloads constructor(
                 + ViewCompat.getPaddingStart(this)
                 + i * (otpViewItemSpacing + otpViewItemWidth) + halfLineWidth)
         if (otpViewItemSpacing == 0 && i > 0) {
-            left = left - lineWidth * i
+            left -= lineWidth * i
         }
         val right = left + otpViewItemWidth - lineWidth
         val top = scrollY + paddingTop + halfLineWidth
@@ -428,18 +423,17 @@ class OtpView @JvmOverloads constructor(
     }
 
     private fun drawText(canvas: Canvas, i: Int) {
-        val paint = getPaintByIndex(i)
+        val paint = getPaintByIndex()
         paint.color = currentTextColor
         if (rtlTextDirection) {
             val reversedPosition = otpViewItemCount - i
-            val reversedCharPosition: Int
-            reversedCharPosition = if (text == null) {
+            val reversedCharPosition: Int = if (text == null) {
                 reversedPosition
             } else {
                 reversedPosition - text!!.length
             }
             if (reversedCharPosition <= 0 && text != null) {
-                drawTextAtBox(canvas, paint, text, Math.abs(reversedCharPosition))
+                drawTextAtBox(canvas, paint, text, abs(reversedCharPosition))
             }
         } else if (text != null) {
             drawTextAtBox(canvas, paint, text, i)
@@ -447,12 +441,11 @@ class OtpView @JvmOverloads constructor(
     }
 
     private fun drawMaskingText(canvas: Canvas, i: Int, maskingChar: String) {
-        val paint = getPaintByIndex(i)
+        val paint = getPaintByIndex()
         paint.color = currentTextColor
         if (rtlTextDirection) {
             val reversedPosition = otpViewItemCount - i
-            val reversedCharPosition: Int
-            reversedCharPosition = if (text == null) {
+            val reversedCharPosition: Int = if (text == null) {
                 reversedPosition
             } else {
                 reversedPosition - text!!.length
@@ -460,7 +453,7 @@ class OtpView @JvmOverloads constructor(
             if (reversedCharPosition <= 0 && text != null) {
                 drawTextAtBox(
                     canvas, paint, text.toString().replace(".".toRegex(), maskingChar),
-                    Math.abs(reversedCharPosition)
+                    abs(reversedCharPosition)
                 )
             }
         } else if (text != null) {
@@ -469,13 +462,13 @@ class OtpView @JvmOverloads constructor(
     }
 
     private fun drawHint(canvas: Canvas, i: Int) {
-        val paint = getPaintByIndex(i)
+        val paint = getPaintByIndex()
         paint.color = currentHintTextColor
         if (rtlTextDirection) {
             val reversedPosition = otpViewItemCount - i
             val reversedCharPosition = reversedPosition - hint.length
             if (reversedCharPosition <= 0) {
-                drawTextAtBox(canvas, paint, hint, Math.abs(reversedCharPosition))
+                drawTextAtBox(canvas, paint, hint, abs(reversedCharPosition))
             }
         } else {
             drawTextAtBox(canvas, paint, hint, i)
@@ -486,13 +479,13 @@ class OtpView @JvmOverloads constructor(
         paint.getTextBounds(text.toString(), charAt, charAt + 1, textRect)
         val cx = itemCenterPoint.x
         val cy = itemCenterPoint.y
-        val x = cx - Math.abs(textRect.width().toFloat()) / 2 - textRect.left
-        val y = cy + Math.abs(textRect.height().toFloat()) / 2 - textRect.bottom
+        val x = cx - abs(textRect.width().toFloat()) / 2 - textRect.left
+        val y = cy + abs(textRect.height().toFloat()) / 2 - textRect.bottom
         canvas.drawText(text!!, charAt, charAt + 1, x, y, paint)
     }
 
     private fun drawCircle(canvas: Canvas, i: Int) {
-        val paint = getPaintByIndex(i)
+        val paint = getPaintByIndex()
         val cx = itemCenterPoint.x
         val cy = itemCenterPoint.y
         if (rtlTextDirection) {
@@ -506,7 +499,7 @@ class OtpView @JvmOverloads constructor(
         }
     }
 
-    private fun getPaintByIndex(i: Int): Paint {
+    private fun getPaintByIndex(): Paint {
         return getPaint()
         /*if (getText() != null && isAnimationEnable && i == getText().length() - 1) {
 //            animatorTextPaint.setColor(getPaint().getColor());
@@ -524,194 +517,24 @@ class OtpView @JvmOverloads constructor(
         cy -= paint.strokeWidth / 2
         path.reset()
         path.moveTo(cx, itemBorderRect.top)
-        path.lineTo(cx, itemBorderRect.top + Math.abs(itemBorderRect.height()))
+        path.lineTo(cx, itemBorderRect.top + abs(itemBorderRect.height()))
         canvas.drawPath(path, paint)
         path.reset()
         path.moveTo(itemBorderRect.left, cy)
-        path.lineTo(itemBorderRect.left + Math.abs(itemBorderRect.width()), cy)
+        path.lineTo(itemBorderRect.left + abs(itemBorderRect.width()), cy)
         canvas.drawPath(path, paint)
         path.reset()
         paint.strokeWidth = lineWidth.toFloat()
     }
 
-    private fun updateColors() {
-        var shouldInvalidate = false
-        val color = if (lineColors != null) lineColors!!.getColorForState(
-            drawableState,
-            0
-        ) else currentTextColor
-        if (color != currentLineColor) {
-            currentLineColor = color
-            shouldInvalidate = true
-        }
-        if (shouldInvalidate) {
-            invalidate()
-        }
-    }
-
     private fun updateCenterPoint() {
-        val cx = itemBorderRect.left + Math.abs(itemBorderRect.width()) / 2
-        val cy = itemBorderRect.top + Math.abs(itemBorderRect.height()) / 2
+        val cx = itemBorderRect.left + abs(itemBorderRect.width()) / 2
+        val cy = itemBorderRect.top + abs(itemBorderRect.height()) / 2
         itemCenterPoint[cx] = cy
     }
 
     override fun getDefaultMovementMethod(): MovementMethod {
         return instance!!
-    }
-
-    /**
-     * Sets the line color for all the states (normal, selected,
-     * focused) to be this color.
-     *
-     * @param color A color value in the form 0xAARRGGBB.
-     * Do not pass a resource ID. To get a color value from a resource ID, call
-     * @attr ref R.styleable#OtpView_lineColor
-     * @see .setLineColor
-     * @see .getLineColors
-     */
-    fun setLineColor(@ColorInt color: Int) {
-        lineColors = ColorStateList.valueOf(color)
-        updateColors()
-    }
-
-    /**
-     * Sets the line color.
-     *
-     * @attr ref R.styleable#OtpView_lineColor
-     * @see .setLineColor
-     * @see .getLineColors
-     */
-    fun setLineColor(colors: ColorStateList?) {
-        requireNotNull(colors) { "Color cannot be null" }
-        lineColors = colors
-        updateColors()
-    }
-
-    /**
-     * Sets the line width.
-     *
-     * @attr ref R.styleable#OtpView_lineWidth
-     * @see .getLineWidth
-     */
-    fun setLineWidth(@Px borderWidth: Int) {
-        lineWidth = borderWidth
-        checkItemRadius()
-        requestLayout()
-    }
-
-    /**
-     * @return Returns the width of the item's line.
-     * @see .setLineWidth
-     */
-    fun getLineWidth(): Int {
-        return lineWidth
-    }
-    /**
-     * @return Returns the count of items.
-     * @see .setItemCount
-     */
-    /**
-     * Sets the count of items.
-     *
-     * @attr ref R.styleable#OtpView_itemCount
-     * @see .getItemCount
-     */
-    var itemCount: Int
-        get() = otpViewItemCount
-        set(count) {
-            otpViewItemCount = count
-            setMaxLength(count)
-            requestLayout()
-        }
-    /**
-     * @return Returns the radius of square.
-     * @see .setItemRadius
-     */
-    /**
-     * Sets the radius of square.
-     *
-     * @attr ref R.styleable#OtpView_itemRadius
-     * @see .getItemRadius
-     */
-    var itemRadius: Int
-        get() = otpViewItemRadius
-        set(itemRadius) {
-            otpViewItemRadius = itemRadius
-            checkItemRadius()
-            requestLayout()
-        }
-    /**
-     * @return Returns the spacing between two items.
-     * @see .setItemSpacing
-     */
-    /**
-     * Specifies extra space between two items.
-     *
-     * @attr ref R.styleable#OtpView_itemSpacing
-     * @see .getItemSpacing
-     */
-    @get:Px
-    var itemSpacing: Int
-        get() = otpViewItemSpacing
-        set(itemSpacing) {
-            otpViewItemSpacing = itemSpacing
-            requestLayout()
-        }
-    /**
-     * @return Returns the height of item.
-     * @see .setItemHeight
-     */
-    /**
-     * Sets the height of item.
-     *
-     * @attr ref R.styleable#OtpView_itemHeight
-     * @see .getItemHeight
-     */
-    var itemHeight: Int
-        get() = otpViewItemHeight
-        set(itemHeight) {
-            otpViewItemHeight = itemHeight
-            updateCursorHeight()
-            requestLayout()
-        }
-    /**
-     * @return Returns the width of item.
-     * @see .setItemWidth
-     */
-    /**
-     * Sets the width of item.
-     *
-     * @attr ref R.styleable#OtpView_itemWidth
-     * @see .getItemWidth
-     */
-    var itemWidth: Int
-        get() = otpViewItemWidth
-        set(itemWidth) {
-            otpViewItemWidth = itemWidth
-            checkItemRadius()
-            requestLayout()
-        }
-
-    /**
-     * Specifies whether the text animation should be enabled or disabled.
-     * By the default, the animation is disabled.
-     *
-     * @param enable True to start animation when adding text, false to transition immediately
-     */
-    fun setAnimationEnable(enable: Boolean) {
-        isAnimationEnable = enable
-    }
-
-    /**
-     * Specifies whether the line (border) should be hidden or visible when text entered.
-     * By the default, this flag is false and the line is always drawn.
-     *
-     * @param hideLineWhenFilled true to hide line on a position where text entered,
-     * false to always show line
-     * @attr ref R.styleable#OtpView_hideLineWhenFilled
-     */
-    fun setHideLineWhenFilled(hideLineWhenFilled: Boolean) {
-        this.hideLineWhenFilled = hideLineWhenFilled
     }
 
     override fun setTextSize(size: Float) {
@@ -726,104 +549,6 @@ class OtpView @JvmOverloads constructor(
 
     fun setOtpCompletionListener(otpCompletionListener: OnOtpCompletionListener?) {
         onOtpCompletionListener = otpCompletionListener
-    }
-    //region ItemBackground
-    /**
-     * Set the item background to a given resource. The resource should refer to
-     * a Drawable object or 0 to remove the item background.
-     *
-     * @param resId The identifier of the resource.
-     * @attr ref R.styleable#OtpView_android_itemBackground
-     */
-    fun setItemBackgroundResources(@DrawableRes resId: Int) {
-        if (resId != 0 && itemBackgroundResource != resId) {
-            return
-        }
-        itemBackground = ResourcesCompat.getDrawable(resources, resId, context.theme)
-        setItemBackground(itemBackground)
-        itemBackgroundResource = resId
-    }
-
-    /**
-     * Sets the item background color for this view.
-     *
-     * @param color the color of the item background
-     */
-    fun setItemBackgroundColor(@ColorInt color: Int) {
-        if (itemBackground is ColorDrawable) {
-            ((itemBackground as ColorDrawable).mutate() as ColorDrawable).color = color
-            itemBackgroundResource = 0
-        } else {
-            setItemBackground(ColorDrawable(color))
-        }
-    }
-
-    /**
-     * Set the item background to a given Drawable, or remove the background.
-     *
-     * @param background The Drawable to use as the item background, or null to remove the
-     * item background
-     */
-    fun setItemBackground(background: Drawable?) {
-        itemBackgroundResource = 0
-        itemBackground = background
-        invalidate()
-    }
-    //endregion
-    //region Cursor
-    /**
-     * Sets the width (in pixels) of cursor.
-     *
-     * @attr ref R.styleable#OtpView_cursorWidth
-     * @see .getCursorWidth
-     */
-    fun setCursorWidth(@Px width: Int) {
-        cursorWidth = width
-        if (isCursorVisible()) {
-            invalidateCursor(true)
-        }
-    }
-
-    /**
-     * @return Returns the width (in pixels) of cursor.
-     * @see .setCursorWidth
-     */
-    fun getCursorWidth(): Int {
-        return cursorWidth
-    }
-
-    /**
-     * Sets the cursor color.
-     *
-     * @param color A color value in the form 0xAARRGGBB.
-     * Do not pass a resource ID. To get a color value from a resource ID, call
-     * @attr ref R.styleable#OtpView_cursorColor
-     * @see .getCursorColor
-     */
-    fun setCursorColor(@ColorInt color: Int) {
-        cursorColor = color
-        if (isCursorVisible()) {
-            invalidateCursor(true)
-        }
-    }
-
-    /**
-     * Gets the cursor color.
-     *
-     * @return Return current cursor color.
-     * @see .setCursorColor
-     */
-    fun getCursorColor(): Int {
-        return cursorColor
-    }
-
-    fun setMaskingChar(maskingChar: String?) {
-        this.maskingChar = maskingChar
-        requestLayout()
-    }
-
-    fun getMaskingChar(): String? {
-        return maskingChar
     }
 
     override fun setCursorVisible(visible: Boolean) {

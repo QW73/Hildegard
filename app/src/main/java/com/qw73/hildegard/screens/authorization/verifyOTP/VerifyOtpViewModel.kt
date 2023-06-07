@@ -1,7 +1,6 @@
 package com.qw73.hildegard.screens.authorization.verifyOTP
 
 import android.os.CountDownTimer
-import android.util.Log
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
@@ -16,13 +15,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class VarifyOtpViewModel @Inject constructor(val resource: IRes): ViewModel() {
+class VerifyOtpViewModel @Inject constructor(val resource: IRes): ViewModel() {
 
     /* binding variables */
     val loaderVisibility = ObservableBoolean(false)
     val isResendClickable = ObservableBoolean(false)
     val isError = ObservableBoolean(false)
-    val isResendLoaderVisible = ObservableBoolean(false)
+    private val isResendLoaderVisible = ObservableBoolean(false)
     val resendText = ObservableField<String>()
 
     /* data variables */
@@ -31,8 +30,6 @@ class VarifyOtpViewModel @Inject constructor(val resource: IRes): ViewModel() {
     val validationEvents: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
     var isTimerRunning = false
     var isOtpProvided = false
-
-    private val _otp = MutableLiveData<String>("")
 
     fun onValidateOTPClick() {
         isError.set(!isOtpProvided)

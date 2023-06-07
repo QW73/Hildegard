@@ -76,13 +76,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/expandedLayout"
             android:layout_width="118dp"
             android:layout_height="280dp"
             android:background="#A1EFEFEF"
-            android:paddingVertical="16dp"
             android:gravity="center"
-            android:id="@+id/expandedLayout"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="16dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,6 +93,7 @@
                 android:text="Калории:"
                 android:textColor="#9A493D35"
                 android:textSize="17sp" />
+
             <TextView
                 android:id="@+id/textViewCalories"
                 android:layout_width="match_parent"
@@ -102,8 +103,7 @@
                 android:paddingHorizontal="18dp"
                 android:text="540 кКал"
                 android:textColor="#D5493D35"
-                android:textSize="17sp"
-                />
+                android:textSize="17sp" />
 
             <View
                 android:layout_width="match_parent"
@@ -149,6 +149,7 @@
                 android:text="Жиры:"
                 android:textColor="#9A493D35"
                 android:textSize="17sp" />
+
             <TextView
                 android:id="@+id/textViewFat"
                 android:layout_width="match_parent"
@@ -177,6 +178,7 @@
                 android:text="Углеводы:"
                 android:textColor="#9A493D35"
                 android:textSize="17sp" />
+
             <TextView
                 android:id="@+id/textViewCarbohydrates"
                 android:layout_width="match_parent"

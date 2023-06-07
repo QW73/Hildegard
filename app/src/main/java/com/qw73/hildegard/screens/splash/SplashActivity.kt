@@ -25,12 +25,15 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SplashActivity : BaseActivity() {
 
-    lateinit var logoImage: ImageView
-    lateinit var developerView: TextView
+    private lateinit var logoImage: ImageView
+    private lateinit var developerView: TextView
 
-    @Inject lateinit var navigor: Navigator
-    @Inject lateinit var pref: IPref
-    @Inject lateinit var res: IRes
+    @Inject
+    lateinit var navigator: Navigator
+    @Inject
+    lateinit var pref: IPref
+    @Inject
+    lateinit var res: IRes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +56,9 @@ class SplashActivity : BaseActivity() {
     private fun loadNextScreen(screen: Screen, delay: Long) {
         /* additional delay to show the splash */
         Handler(Looper.getMainLooper()).postDelayed({
-            navigor.navigateToAuthorization(screen, logoImage, res.str(R.string.image_logo_transition))
+            navigator.navigateToAuthorization(screen,
+                logoImage,
+                res.str(R.string.image_logo_transition))
         }, delay)
     }
 

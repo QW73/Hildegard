@@ -1,6 +1,5 @@
 package com.qw73.hildegard.screens.main.home
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,8 @@ import com.bumptech.glide.Glide
 import com.qw73.hildegard.data.bd.dish.Dish
 import com.qw73.hildegard.databinding.ItemDishBinding
 
-class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
+class DishAdapter(private var dishes: List<Dish>) :
+    RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
     private lateinit var onDishClickListener: (Dish) -> Unit
 
@@ -32,7 +32,8 @@ class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAda
         return dishes.size
     }
 
-    inner class DishViewHolder(private val binding: ItemDishBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class DishViewHolder(private val binding: ItemDishBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         init {
             setupClickListener()
@@ -45,7 +46,7 @@ class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAda
             }
 
             binding.root.setOnLongClickListener {
-                val dish = dishes[adapterPosition]
+                dishes[adapterPosition]
                 toggleExpandItem()
                 true
             }
@@ -68,7 +69,7 @@ class DishAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<DishAda
             binding.textViewProtein.text = dish.proteins.toString() + " гр"
             binding.textViewFat.text = dish.fats.toString() + " гр"
             binding.textViewCarbohydrates.text = dish.carbohydrates.toString() + " гр"
-            binding.textViewCalories.text = dish.calories.toString() +" кКал"
+            binding.textViewCalories.text = dish.calories.toString() + " кКал"
 
             Glide.with(binding.root.context)
                 .load(dish.image)

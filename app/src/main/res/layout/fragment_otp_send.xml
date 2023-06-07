@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="com.qw73.hildegard.screens.authorization.sendOTP.SendOtpViewModel" />
@@ -32,14 +35,14 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:ems="10"
-            android:textColorHint="@color/gray"
+            android:focusable="false"
             android:hint="@string/phone_number_hint"
             android:inputType="number"
             android:textAlignment="center"
             android:textColor="?attr/colorOnSurface"
+            android:textColorHint="@color/gray"
             android:textIsSelectable="false"
             android:textSize="32sp"
-            android:focusable="false"
             android:typeface="monospace"
             app:mask="+7 (###) ###-##-##" />
 
@@ -48,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:textColor="?attr/colorAccent"
-            android:textSize="20sp"
             android:gravity="center_vertical"
             android:text="@string/invalid_number"
+            android:textColor="?attr/colorAccent"
+            android:textSize="20sp"
             android:visibility="@{viewModel.Error? View.VISIBLE : View.GONE}" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

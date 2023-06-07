@@ -1,6 +1,5 @@
 package com.qw73.hildegard.screens.authorization.sendOTP
 
-import android.R
 import android.app.Activity
 import android.content.IntentSender
 import android.os.Bundle
@@ -9,7 +8,6 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -28,7 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class SendOtpFragment: Fragment() {
 
     /* view objects */
-    lateinit var editPhone: MaskedEditText
+    private lateinit var editPhone: MaskedEditText
     lateinit var viewBinding: FragmentOtpSendBinding
 
     /* view mode object */
@@ -41,7 +39,7 @@ class SendOtpFragment: Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         viewBinding = FragmentOtpSendBinding.inflate(inflater,container,false)
         viewBinding.viewModel = viewModel
         editPhone = viewBinding.etPhone

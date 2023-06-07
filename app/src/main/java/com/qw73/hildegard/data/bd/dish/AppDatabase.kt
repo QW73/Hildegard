@@ -5,12 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.qw73.hildegard.data.bd.сonverter.ListConverter
-import com.qw73.hildegard.data.bd.сonverter.UriConverter
+import com.qw73.hildegard.data.bd.сonverters.ListConverter
+import com.qw73.hildegard.data.bd.сonverters.UriConverter
 
 
 @TypeConverters(ListConverter::class, UriConverter::class)
-@Database(entities = [Dish::class], version = 1, exportSchema = false)
+@Database(entities = [Dish::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun dishDao(): DishDao

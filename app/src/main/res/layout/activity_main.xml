@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
-    android:theme="@style/HildegardMain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/HildegardMain">
 
-    <fragment android:id="@+id/main_fragment" android:layout_width="match_parent"
-        android:layout_height="0dp" android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost="true" app:navGraph='@navigation/mobile_main_navigation'
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph='@navigation/mobile_main_navigation' />
 
 
-    <me.ibrahimsn.lib.SmoothBottomBar android:id="@+id/bottomBar"
-        android:layout_width="match_parent" android:layout_height="78dp"
-        app:backgroundColor="?attr/colorPrimary" app:textColor="?attr/colorOnPrimary"
-        app:textSize="16sp" app:iconSize="24dp" app:indicatorColor="#2DFFFFFF"
-        app:indicatorRadius="14dp" app:sideMargins="14dp" app:itemPadding="12dp"
-        app:iconTint="#C8FFFFFF" app:iconMargin="4dp" app:iconTintActive="#FFFFFF"
-        app:corners="top_left|bottom_right" app:menu="@menu/menu_bottom"
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        app:backgroundColor="?attr/colorPrimary"
+        app:corners="top_left|bottom_right"
+        app:iconMargin="4dp"
+        app:iconSize="24dp"
+        app:iconTint="#C8FFFFFF"
+        app:iconTintActive="#FFFFFF"
+        app:indicatorColor="#2DFFFFFF"
+        app:indicatorRadius="14dp"
         app:itemFontFamily="@font/ssp_regular_family"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:itemPadding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom"
+        app:sideMargins="14dp"
+        app:textColor="?attr/colorOnPrimary"
+        app:textSize="16sp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -71,5 +71,18 @@
     <string name="string_nuts">Разрешить орехи:</string>
     <string name="string_add_to_cart">Добавить в корзину</string>
 
+    <string name="item_dish_name">%s</string>
+    <string name="item_dish_price">%s ₽</string>
+
+    <string name="exp_item_dish_ingredients">%s</string>
+    <string name="exp_item_dish_protein">%s г</string>
+    <string name="exp_item_dish_fat">%s г</string>
+    <string name="exp_item_dish_carbohydrates">%s г</string>
+    <string name="exp_item_dish_calories">%s кКал</string>
+    <string name="exp_item_dish_gram"> / %s грамм</string>
+
+
+
+
 
 </resources>

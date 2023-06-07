@@ -1,4 +1,4 @@
-package com.qw73.hildegard.data.bd.сonverter
+package com.qw73.hildegard.data.bd.сonverters
 
 import android.net.Uri
 import androidx.room.TypeConverter

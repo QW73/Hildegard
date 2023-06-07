@@ -12,41 +12,41 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/linear_personal_data_"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:gravity="center"
+        android:orientation="vertical"
         android:paddingHorizontal="32dp"
-        tools:context=".home.profile.personalData.PersonalDataFragment" >
+        tools:context=".home.profile.personalData.PersonalDataFragment">
 
         <!-- Имя -->
         <LinearLayout
             android:id="@+id/container_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="30dp">
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/string_name"
-                android:textSize="20sp"
-                android:textColor="?attr/colorPrimary" />
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
 
 
             <EditText
                 android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:hint="Саша"
                 android:imeActionLabel="Готово"
                 android:imeOptions="actionDone"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="?attr/colorPrimaryDark" />
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <!-- Номер телефона -->
@@ -62,17 +62,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/string_data_phone_number"
-                android:textSize="20sp"
-                android:textColor="?attr/colorPrimary" />
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:enabled="false"
                 android:hint="+7 (928) 918-40-12"
-                android:textColor="?attr/colorPrimaryDark" />
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -89,21 +89,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/string_email"
-                android:textSize="20sp"
-                android:textColor="?attr/colorPrimary" />
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/et_email"
-                android:textColor="?attr/colorPrimaryDark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:singleLine="true"
+                android:hint="example@example.com"
                 android:imeActionLabel="Готово"
                 android:imeOptions="actionDone"
-                android:maxLines="1"
                 android:inputType="textEmailAddress"
-                android:hint="example@example.com" />
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -120,19 +120,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/string_bday"
-                android:textSize="20sp"
                 android:textColor="?attr/colorPrimary"
-                />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/et_birthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="?attr/colorPrimaryDark"
-                android:hint="dd.mm.yyyy"
                 android:focusable="false"
-                android:inputType="none"/>
+                android:hint="dd.mm.yyyy"
+                android:inputType="none"
+                android:textColor="?attr/colorPrimaryDark"
+                android:textSize="20sp" />
 
         </LinearLayout>
 

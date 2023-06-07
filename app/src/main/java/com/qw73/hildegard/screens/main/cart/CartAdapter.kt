@@ -1,14 +1,13 @@
 package com.qw73.hildegard.screens.main.cart
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.qw73.hildegard.data.bd.dish.Dish
 import com.qw73.hildegard.databinding.ItemCartBinding
 
-class CartAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+class CartAdapter(private var dishes: List<Dish>) :
+    RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -25,7 +24,8 @@ class CartAdapter(private var dishes: List<Dish>) : RecyclerView.Adapter<CartAda
         return dishes.size
     }
 
-    inner class CartViewHolder(private val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class CartViewHolder(private val binding: ItemCartBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(dish: Dish) {
             // Bind dish data to the views in the item layout

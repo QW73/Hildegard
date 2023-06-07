@@ -33,10 +33,10 @@ class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    lateinit var phoneNumber: String
+    private lateinit var phoneNumber: String
 
     @Inject
-    lateinit var navigor: Navigator
+    lateinit var navigator: Navigator
 
     @Inject
     lateinit var pref: IPref
@@ -97,9 +97,7 @@ class MainActivity : BaseActivity() {
                 "киви",
                 "ванильный соус",
                 "мята"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish2 = Dish(
@@ -114,9 +112,7 @@ class MainActivity : BaseActivity() {
             carbohydrates = 20,
             exclusions = listOf("Milk"),
             ingredients = listOf("Оладьи из кабачка", "томаты черри", "микс салата", "сметана"),
-                    count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish3 = Dish(
@@ -136,9 +132,7 @@ class MainActivity : BaseActivity() {
                 "лук",
                 "чеснок",
                 "кинза"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish4 = Dish(
@@ -160,9 +154,7 @@ class MainActivity : BaseActivity() {
                 "куриное яйцо",
                 "сыр Гауда",
                 "микс салата"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish5 = Dish(
@@ -177,9 +169,7 @@ class MainActivity : BaseActivity() {
             carbohydrates = 22,
             exclusions = listOf("Gluten", "Sugar"),
             ingredients = listOf("Овсяные хлопья", "банановое молоко", "масло", "сахар"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish6 = Dish(
@@ -194,9 +184,7 @@ class MainActivity : BaseActivity() {
             carbohydrates = 52,
             exclusions = listOf("Gluten"),
             ingredients = listOf("Гречневая крупа", "шампиньоны", "лук", "растительное масло"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish7 = Dish(
@@ -217,9 +205,7 @@ class MainActivity : BaseActivity() {
                 "сметана",
                 "жареный лук",
                 "зелёный лук"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish8 = Dish(
@@ -241,9 +227,7 @@ class MainActivity : BaseActivity() {
                 "сырный соус",
                 "томатный соус",
                 "зеленый лук"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish9 = Dish(
@@ -265,9 +249,7 @@ class MainActivity : BaseActivity() {
                 "цитрусовый мед",
                 "клубника",
                 "мята"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish10 = Dish(
@@ -287,9 +269,7 @@ class MainActivity : BaseActivity() {
                 "сосиски",
                 "зелёный лук",
                 "сметана"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish11 = Dish(
@@ -309,9 +289,7 @@ class MainActivity : BaseActivity() {
                 "пармезан",
                 "соус «Цезарь»",
                 "томаты черри"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish12 = Dish(
@@ -336,9 +314,7 @@ class MainActivity : BaseActivity() {
                 "бальзамический уксус",
                 "оливковое масло",
                 "салат «Лолло Россо»"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
 
         val dish13 = Dish(
@@ -359,9 +335,7 @@ class MainActivity : BaseActivity() {
                 "микс салата",
                 "кунжут",
                 "лаймовая заправка"),
-            count = 0,
-            date = null,
-            address = null
+            count = 0
         )
         val dishes = listOf(
             dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10,

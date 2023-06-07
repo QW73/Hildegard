@@ -11,11 +11,11 @@
         android:label="Авторизация"
         tools:layout="@layout/fragment_otp_send"/>
 
-    <fragment
+    <fragmentl
         android:id="@+id/verify"
         android:name="com.qw73.hildegard.screens.authorization.verifyOTP.VerifyOtpFragment"
         android:label="Код для авторизации"
         tools:layout="@layout/fragment_otp_verify" >
-    </fragment>
+    </fragmentl>
 
 </navigation>

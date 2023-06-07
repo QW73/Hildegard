@@ -1,7 +1,6 @@
 package com.qw73.hildegard.screens.authorization
 
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
@@ -17,23 +16,17 @@ import com.qw73.hildegard.databinding.ActivityOtpBinding
 import com.qw73.hildegard.navigate.Navigator
 import com.qw73.hildegard.screens.authorization.sendOTP.SendOtpFragment
 import com.qw73.hildegard.screens.authorization.sendOTP.SendOtpViewModel
-import com.qw73.hildegard.screens.authorization.verifyOTP.VarifyOtpViewModel
 import com.qw73.hildegard.screens.authorization.verifyOTP.VerifyOtpFragment
-import com.qw73.hildegard.screens.main.profile.SharedViewModel
+import com.qw73.hildegard.screens.authorization.verifyOTP.VerifyOtpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
-    private lateinit var binding: ActivityOtpBinding
-
-    // private lateinit var bannerHeaderView: TextView
-    //  private lateinit var bannerSubHeaderView: TextView
-    private lateinit var bannerImage: ImageView
 
     /* dependency objects */
     @Inject
-    lateinit var navigor: Navigator
+    lateinit var navigator: Navigator
 
     @Inject
     lateinit var pref: IPref
@@ -44,14 +37,11 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
     @Inject
     lateinit var otpManager: IOtpManager
 
-    lateinit var numberKeyboard: NumberKeyboard
-
-    lateinit var currentOtp: String
+    private lateinit var numberKeyboard: NumberKeyboard
 
     /* view models objects */
     private val sendOtpViewModel: SendOtpViewModel by viewModels()
-    private val verifyOtpViewModel: VarifyOtpViewModel by viewModels()
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val verifyOtpViewModel: VerifyOtpViewModel by viewModels()
 
     /* variable to identifier otp request state */
     private var otpRequestState = EVENT_SEND_OTP
@@ -62,7 +52,7 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
         bindViews()
         bindFragment(SendOtpFragment.instance(), SendOtpFragment::class.simpleName)
         bindObservers()
-        numberKeyboard = findViewById<NumberKeyboard>(R.id.numberKeyboard)
+        numberKeyboard = findViewById(R.id.numberKeyboard)
         numberKeyboard.setListener(this)
     }
 
@@ -89,7 +79,7 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.login_frame)
 
         if (currentFragment is SendOtpFragment) {
-            var currentText = currentFragment.viewBinding.etPhone.text
+            val currentText = currentFragment.viewBinding.etPhone.text
             if (currentText != null) {
                 currentFragment.viewBinding.etPhone.text!!.delete(currentText.length - 1,
                     currentText.length)
@@ -97,7 +87,7 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
         }
 
         if (currentFragment is VerifyOtpFragment) {
-            var currentText = currentFragment.viewBinding.otpView.text
+            val currentText = currentFragment.viewBinding.otpView.text
             if (currentText != null) {
                 currentFragment.viewBinding.otpView.text!!.delete(currentText.length - 1,
                     currentText.length)
@@ -152,7 +142,7 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
                     verifyOtpViewModel.validateOtpState(true)
                     pref.put(KEY_USER_AUTHORIZATION, true)
                     pref.put("phone_number", sendOtpViewModel.phoneNumber())
-                    navigor.navigateToMain()
+                    navigator.navigateToMain()
                 }
                 EVENT_VALIDATE_FAILED -> verifyOtpViewModel.validateOtpState(false)
             }

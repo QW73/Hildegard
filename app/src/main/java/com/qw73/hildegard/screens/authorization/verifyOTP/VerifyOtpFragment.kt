@@ -19,7 +19,7 @@ import com.qw73.hildegard.screens.authorization.otpView.OtpView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class VerifyOtpFragment: Fragment(), OtpReceivedInterface {
+class VerifyOtpFragment : Fragment(), OtpReceivedInterface {
 
     /* view objects */
     private lateinit var otpView: OtpView
@@ -29,7 +29,7 @@ class VerifyOtpFragment: Fragment(), OtpReceivedInterface {
     private val smsReceiver = SmsBroadcastReceiver()
 
     /* view model objects */
-    private val viewModel: VarifyOtpViewModel by activityViewModels()
+    private val viewModel: VerifyOtpViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +40,8 @@ class VerifyOtpFragment: Fragment(), OtpReceivedInterface {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?,
+    ): View {
         viewBinding = FragmentOtpVerifyBinding.inflate(inflater, container, false)
         viewBinding.viewModel = viewModel
         bindViews()

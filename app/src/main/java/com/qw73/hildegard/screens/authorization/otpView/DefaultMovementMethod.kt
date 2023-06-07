@@ -16,7 +16,7 @@ internal class DefaultMovementMethod private constructor() : MovementMethod {
         widget: TextView,
         text: Spannable,
         keyCode: Int,
-        event: KeyEvent
+        event: KeyEvent,
     ): Boolean {
         return false
     }
@@ -25,7 +25,7 @@ internal class DefaultMovementMethod private constructor() : MovementMethod {
         widget: TextView,
         text: Spannable,
         keyCode: Int,
-        event: KeyEvent
+        event: KeyEvent,
     ): Boolean {
         return false
     }
@@ -49,7 +49,7 @@ internal class DefaultMovementMethod private constructor() : MovementMethod {
     override fun onGenericMotionEvent(
         widget: TextView,
         text: Spannable,
-        event: MotionEvent
+        event: MotionEvent,
     ): Boolean {
         return false
     }
