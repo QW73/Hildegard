@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
     ): View {
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
         viewBinding.viewModel = viewModel
-        bindViews()
         return viewBinding.root
     }
 
@@ -51,11 +50,8 @@ class HomeFragment : Fragment() {
             sharedViewModel.setSavedName(savedName)
         }
 
-        // Устанавливаем приветствие
         updateGreetingText()
-
         bindExclusions()
-
     }
 
     private fun bindExclusions() {
@@ -117,11 +113,6 @@ class HomeFragment : Fragment() {
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             }
         }
-    }
-
-
-    private fun bindViews() {
-        //
     }
 
     private fun openExpDishFragment(dish: Dish) {

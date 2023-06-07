@@ -28,7 +28,6 @@ class ExpDishFragment : Fragment() {
     ): View {
         viewBinding = FragmentExpDishBinding.inflate(inflater, container, false)
         viewBinding.viewModel = viewModel
-        bindViews()
         return viewBinding.root
     }
 
@@ -105,10 +104,6 @@ class ExpDishFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun bindViews() {
-        // Bind your views here if needed
     }
 
     companion object {

@@ -30,7 +30,10 @@ class CartAdapter(private var dishes: List<Dish>) :
         fun bind(dish: Dish) {
             // Bind dish data to the views in the item layout
             binding.textCartName.text = dish.name
-            binding.textCartCount.text = dish.count.toString()
+            binding.textCartCount.text =
+                dish.price.toString() + " ₽ x " + dish.count.toString() + " шт"
+            binding.textCartAllPrice.text =
+                "Итого: " + (dish.price * dish.count).toString() + " ₽"
 
         }
     }

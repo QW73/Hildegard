@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/home_fragment">
 
+    <!-- Навигация "Главная" -->
     <fragment
         android:id="@+id/home_fragment"
         android:name="com.qw73.hildegard.screens.main.home.HomeFragment"
@@ -15,6 +16,7 @@
             app:destination="@id/exp_dish_fragment" />
     </fragment>
 
+    <!-- Навигация "Корзина" -->
     <fragment
         android:id="@+id/cart_fragment"
         android:name="com.qw73.hildegard.screens.main.cart.CartFragment"
@@ -23,6 +25,21 @@
         <action
             android:id="@+id/action_cartFragment_to_homeFragment"
             app:destination="@id/home_fragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_order_detailsFragment"
+            app:destination="@id/order_details_fragment" />
+    </fragment>
+
+    <!-- Навигация "Детали для заказа" -->
+    <fragment
+        android:id="@+id/order_details_fragment"
+        android:name="com.qw73.hildegard.screens.main.cart.orderDetails.OrderDetailsFragment"
+        android:label="Детали доставки"
+        tools:layout="@layout/fragment_order_details">
+        <action
+            android:id="@+id/action_order_detailsFragment_to_cartFragment"
+            app:destination="@id/cart_fragment" />
+
     </fragment>
 
     <!-- Навигация "Расширенной информации о блюде" -->

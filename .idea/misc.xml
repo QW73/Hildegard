@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable-v24/CategoryLabel.xml" value="0.1" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable-v24/cart_confirm.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable-v24/profile_item_icon_corners_and_fill.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable-v24/profile_middle_item_container.xml" value="0.11" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/drawable/corners_and_fill.xml" value="0.11" />
@@ -90,11 +91,12 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/actvity_splash.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/exp_item_dish.xml" value="0.1" />
-        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_cart.xml" value="0.3125" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_chat.xml" value="0.1578125" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_exp_dish.xml" value="0.16544117647058823" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_menu_settings.xml" value="0.264" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_order_details.xml" value="0.176" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_orders.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_otp_send.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_otp_verify.xml" value="0.2" />
@@ -103,7 +105,8 @@
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_sign_up_code.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/fragment_sign_up_main.xml" value="0.18885869565217392" />
-        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_cart.xml" value="0.3355834136933462" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_address_suggestion.xml" value="0.1" />
+        <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_cart.xml" value="0.10397553516819572" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_dish.xml" value="0.16" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_gender_spinner.xml" value="0.1" />
         <entry key="..\:/Users/Tvrma/Hildegard/app/src/main/res/layout/item_gender_spinner_dropdown.xml" value="0.1" />

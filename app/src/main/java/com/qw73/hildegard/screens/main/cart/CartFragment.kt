@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.qw73.hildegard.R
+import com.qw73.hildegard.data.bd.dish.Dish
 import com.qw73.hildegard.databinding.FragmentCartBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -31,13 +34,13 @@ class CartFragment : Fragment() {
     ): View {
         viewBinding = FragmentCartBinding.inflate(inflater, container, false)
         viewBinding.viewModel = viewModel
-        bindViews()
         return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindAdapters()
+        bindViews()
     }
 
     private fun bindAdapters() {
@@ -50,10 +53,11 @@ class CartFragment : Fragment() {
         }
     }
 
-
-
     private fun bindViews() {
-
+        viewBinding.buttonCartAdd.setOnClickListener {
+            val navController = Navigation.findNavController(requireView())
+            navController.navigate(R.id.action_cartFragment_to_order_detailsFragment)
+        }
     }
 
     companion object Companion {
