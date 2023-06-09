@@ -4,9 +4,10 @@
       <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/0c524fb04ae6a596eaab4e5c7067e586/transformed/exifinterface-1.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/0c524fb04ae6a596eaab4e5c7067e586/transformed/exifinterface-1.2.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/0c524fb04ae6a596eaab4e5c7067e586/transformed/exifinterface-1.2.0/res" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/602e3c1bc9ce060aa354ced1f1d9b08a/transformed/exifinterface-1.2.0/res" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/0c524fb04ae6a596eaab4e5c7067e586/transformed/exifinterface-1.2.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/0c524fb04ae6a596eaab4e5c7067e586/transformed/exifinterface-1.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

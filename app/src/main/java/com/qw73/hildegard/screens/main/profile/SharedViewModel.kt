@@ -26,10 +26,10 @@ class SharedViewModel @Inject constructor() : ViewModel() {
     private var savedIsDataFull: Boolean? = null
     private var savedOneMore: Boolean? = null
 
-    private var savedCalories: Int? = null
-    private var savedProtein: Int? = null
-    private var savedCarbohydrates: Int? = null
-    private var savedFat: Int? = null
+     var savedCalories: Int? = null
+     var savedProtein: Int? = null
+     var savedCarbohydrates: Int? = null
+     var savedFat: Int? = null
 
     private var savedMilk: Boolean? = null
     private var savedNuts: Boolean? = null

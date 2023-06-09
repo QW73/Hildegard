@@ -2,8 +2,8 @@
   <library name="Gradle: com.github.aabhasr1:OtpView:v1.1.2-ktx@aar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/ec6175331599b305d7b86d48c9d4fed0/transformed/OtpView-v1.1.2-ktx/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/ec6175331599b305d7b86d48c9d4fed0/transformed/OtpView-v1.1.2-ktx/res" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/ec6175331599b305d7b86d48c9d4fed0/transformed/OtpView-v1.1.2-ktx/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/ec6175331599b305d7b86d48c9d4fed0/transformed/OtpView-v1.1.2-ktx/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

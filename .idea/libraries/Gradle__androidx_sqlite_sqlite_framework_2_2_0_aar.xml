@@ -2,8 +2,8 @@
   <library name="Gradle: androidx.sqlite:sqlite-framework:2.2.0@aar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a1b6e01098e5bffefe08b27adb93ac31/transformed/sqlite-framework-2.2.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a1b6e01098e5bffefe08b27adb93ac31/transformed/sqlite-framework-2.2.0/res" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a1b6e01098e5bffefe08b27adb93ac31/transformed/sqlite-framework-2.2.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a1b6e01098e5bffefe08b27adb93ac31/transformed/sqlite-framework-2.2.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

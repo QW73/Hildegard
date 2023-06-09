@@ -5,8 +5,8 @@
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a74f7ccf733117438a52654059750676/transformed/transition-1.2.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a74f7ccf733117438a52654059750676/transformed/transition-1.2.0/res" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a74f7ccf733117438a52654059750676/transformed/transition-1.2.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/a74f7ccf733117438a52654059750676/transformed/transition-1.2.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

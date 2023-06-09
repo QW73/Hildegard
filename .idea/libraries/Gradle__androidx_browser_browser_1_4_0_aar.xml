@@ -4,9 +4,9 @@
       <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/9850752a5c0ed2c2831981bbc12a484c/transformed/browser-1.4.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/9850752a5c0ed2c2831981bbc12a484c/transformed/browser-1.4.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/9850752a5c0ed2c2831981bbc12a484c/transformed/browser-1.4.0/res" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/9850752a5c0ed2c2831981bbc12a484c/transformed/browser-1.4.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/9850752a5c0ed2c2831981bbc12a484c/transformed/browser-1.4.0/res" />
+      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/9850752a5c0ed2c2831981bbc12a484c/transformed/browser-1.4.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

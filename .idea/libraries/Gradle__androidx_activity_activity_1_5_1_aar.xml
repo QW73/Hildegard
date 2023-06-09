@@ -4,8 +4,8 @@
       <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/6b137d51fd12568bf66fb7f42e0782c4/transformed/activity-1.5.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/6b137d51fd12568bf66fb7f42e0782c4/transformed/activity-1.5.1/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/6b137d51fd12568bf66fb7f42e0782c4/transformed/activity-1.5.1/res" />
+      <root url="jar://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/6b137d51fd12568bf66fb7f42e0782c4/transformed/activity-1.5.1/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../AndroidStudioProjects/caches/transforms-3/6b137d51fd12568bf66fb7f42e0782c4/transformed/activity-1.5.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

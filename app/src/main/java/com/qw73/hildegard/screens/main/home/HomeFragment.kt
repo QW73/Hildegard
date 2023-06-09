@@ -45,7 +45,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
-
+        if (sharedViewModel.savedCalories != null) {
+            viewBinding.tvRecMenu.visibility = View.VISIBLE
+            viewBinding.tvRecMenu.text = "Ваша ежедневная норма:\n" +
+                    sharedViewModel.getCalories().toString() + " кКал, " +
+                    sharedViewModel.getProtein().toString() + " г белка, " +
+                    sharedViewModel.getFat().toString() + " г жиров и " +
+                    sharedViewModel.getCarbohydrates().toString() + " г углеводов"
+        }
         sharedViewModel.getSavedName()?.let { savedName ->
             sharedViewModel.setSavedName(savedName)
         }
