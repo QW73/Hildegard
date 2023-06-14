@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_order_detailsFragment_to_cartFragment"
             app:destination="@id/cart_fragment" />
+        <action
+            android:id="@+id/action_order_detailsFragment_to_ordersFragment"
+            app:destination="@id/orders_fragment" />
 
     </fragment>
 

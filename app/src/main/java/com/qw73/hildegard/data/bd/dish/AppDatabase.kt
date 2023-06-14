@@ -8,7 +8,7 @@ import com.qw73.hildegard.data.bd.сonverters.UriConverter
 
 
 @TypeConverters(ListConverter::class, UriConverter::class)
-@Database(entities = [Dish::class], version = 2, exportSchema = false)
+@Database(entities = [Dish::class, Order::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun dishDao(): DishDao

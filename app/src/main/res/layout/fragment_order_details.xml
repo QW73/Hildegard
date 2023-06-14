@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,11 +10,17 @@
             name="viewModel"
             type="com.qw73.hildegard.screens.main.cart.orderDetails.OrderDetailsViewModel" />
     </data>
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="44dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_cart_details_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:scrollbars="vertical">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -129,6 +136,147 @@
 
             </LinearLayout>
 
+            <!-- День рождения -->
+            <LinearLayout
+                android:id="@+id/container_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:orientation="vertical"
+
+                android:paddingHorizontal="32dp">
+
+                <TextView
+                    android:id="@+id/tv_order_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дата первой доставки"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/et_order_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="dd.mm.yyyy"
+                    android:inputType="none"
+                    android:textColor="?attr/colorPrimaryDark"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <!-- Время доставки -->
+            <LinearLayout
+                android:id="@+id/container_order_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:paddingHorizontal="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_order_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Время доставки"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_order_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text=" 9:00 - 14:00"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_evening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="16:00 - 21:00"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Продолжительность рациона -->
+            <LinearLayout
+                android:id="@+id/container_weeks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:paddingHorizontal="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_weeks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Продолжительность рациона"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_weeks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_2weeks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="Две недели"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_4weeks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="?attr/colorAccent"
+                        android:text="Четыре недели"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="40dp"/>
+
+                </RadioGroup>
+            </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
+
+
+    <Button
+        android:id="@+id/button_cart_details_confirm"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/cart_details_confirm"
+        android:text="Подтвердить"
+        android:textColor="?attr/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

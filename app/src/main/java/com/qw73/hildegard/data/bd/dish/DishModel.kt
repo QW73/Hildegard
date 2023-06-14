@@ -23,5 +23,21 @@ data class Dish(
 )
 
 
+@Entity(tableName = "orders")
+data class Order(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val phone: String,
+    val date: String,
+    val time: String,
+    val street: String,
+    val floor: String,
+    val apartment: String,
+    val dish: String,
+    val dishCount: Int,
+    val totalPrice: Int,
+)
+
+
 
 

@@ -41,6 +41,9 @@ interface DishDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDishes(dishes: List<Dish>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertOrders(orders: Order)
+
     @Query("DELETE FROM dishes")
     suspend fun clearTable()
 

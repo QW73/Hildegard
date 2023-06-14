@@ -27,6 +27,7 @@ class CartFragment : Fragment() {
     /* view mode object */
     private val viewModel: CartViewModel by activityViewModels()
     private val sharedViewModel: SharedViewModel by activityViewModels()
+    private var totalPrice: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,7 +63,7 @@ class CartFragment : Fragment() {
                 viewBinding.recyclerViewCart.adapter = cartAdapter
                 viewBinding.recyclerViewCart.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-                val totalPrice = dishes.sumOf { dish ->
+                totalPrice = dishes.sumOf { dish ->
                     dish.price * dish.count
                 }
 
@@ -148,8 +149,10 @@ class CartFragment : Fragment() {
         viewBinding.buttonCartAdd.setOnClickListener {
 
             val navController = Navigation.findNavController(requireView())
+
             navController.navigate(R.id.action_cartFragment_to_order_detailsFragment)
         }
+
     }
 
     companion object Companion {

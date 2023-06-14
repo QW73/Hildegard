@@ -97,7 +97,7 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="order_fragment">
+                  <entry key="order_details_fragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -108,12 +108,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_cartFragment_to_homeFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_cartFragment_to_order_detailsFragment">
+                            <entry key="action_order_detailsFragment_to_cartFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

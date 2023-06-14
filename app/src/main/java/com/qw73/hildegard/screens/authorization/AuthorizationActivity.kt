@@ -49,7 +49,6 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         otpManager.initFirebase()
-        bindViews()
         bindFragment(SendOtpFragment.instance(), SendOtpFragment::class.simpleName)
         bindObservers()
         numberKeyboard = findViewById(R.id.numberKeyboard)
@@ -156,10 +155,6 @@ class AuthorizationActivity : BaseActivity(), NumberKeyboardListener {
             .addToBackStack(tag)
             .commit()
 
-    }
-
-    private fun bindViews() {
-        //
     }
 
     override fun binding(): ViewBinding {
